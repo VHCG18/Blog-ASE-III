@@ -635,3 +635,6 @@ a {
   background-color: #000;
   display: block;
 }
+.descripcion {
+    max-width: 300px;
+}
