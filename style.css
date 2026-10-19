@@ -638,3 +638,195 @@ a {
 .descripcion {
     max-width: 300px;
 }
+
+/* =====================================================
+   TEMA ESPACIAL (inspirado en VARADO / Figma)
+   Paleta: azul noche #05030F · morado #1B0A5C · rosa #FF007B
+   Fuente: Rajdhani
+===================================================== */
+:root {
+  --noche: #05030f;
+  --morado: #1b0a5c;
+  --rosa: #ff007b;
+  --texto: rgba(255, 255, 255, 0.92);
+  --texto-suave: rgba(255, 255, 255, 0.68);
+  --vidrio: rgba(8, 5, 25, 0.72);
+  --borde: rgba(255, 255, 255, 0.14);
+}
+
+body {
+  font-family: 'Rajdhani', Arial, Helvetica, sans-serif;
+  font-size: 1.15rem;
+  color: var(--texto);
+  background-color: var(--noche);
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 18%, #9db4ff 50%, transparent 52%),
+    radial-gradient(1px 1px at 78% 12%, #fff 50%, transparent 52%),
+    radial-gradient(2px 2px at 88% 42%, #8aa4ff 50%, transparent 52%),
+    radial-gradient(1px 1px at 30% 66%, #fff 50%, transparent 52%),
+    radial-gradient(1.5px 1.5px at 62% 82%, #9db4ff 50%, transparent 52%),
+    radial-gradient(1px 1px at 8% 90%, #fff 50%, transparent 52%),
+    radial-gradient(ellipse at 85% 100%, #2a0f8f 0%, transparent 55%),
+    linear-gradient(180deg, #05030f 0%, #0b0630 55%, #1b0a5c 100%);
+  background-size: 420px 420px, 520px 520px, 610px 610px, 480px 480px, 560px 560px, 400px 400px, 100% 100%, 100% 100%;
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4 { letter-spacing: 0.02em; color: #fff; }
+
+.section { border-bottom: 1px solid var(--borde); }
+.section h1 { font-size: 2.4rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; }
+.section h2 { color: #fff; }
+
+/* Navbar */
+.site-header { background-color: rgba(5, 3, 15, 0.88); backdrop-filter: blur(8px); border-bottom: 1px solid var(--borde); }
+.nav-brand { font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.nav-links a { font-size: 1.05rem; font-weight: 500; letter-spacing: 0.05em; }
+.nav-links a:hover { border-color: var(--rosa); color: var(--rosa); }
+.nav-toggle span { background-color: #fff; }
+
+/* Cajas y paneles en vidrio oscuro */
+.caja, .mapa-nodo, .proto-descripcion, .carrusel, .tanque, .reto-parrafo, .insight-caja {
+  background-color: var(--vidrio);
+  border-color: var(--borde);
+  color: var(--texto);
+}
+.caja-header, .mapa-nodo h4 { background: rgba(255, 255, 255, 0.04); color: #fff; font-family: inherit; }
+.caja-header:hover, .mapa-nodo h4:hover { background: rgba(255, 0, 123, 0.14); }
+.mapa-nodo h4::after { color: var(--rosa); }
+.mapa-texto, .tanque-texto, .insight-texto, .proto-descripcion { color: var(--texto-suave); }
+.carrusel-viewport, .carrusel-slide { background-color: #05030f; }
+.carrusel-btn { background-color: rgba(5, 3, 15, 0.85); color: #fff; border-color: var(--borde); }
+.carrusel-btn:hover { background-color: var(--rosa); border-color: var(--rosa); }
+.carrusel-dot { background-color: rgba(255, 255, 255, 0.25); }
+.carrusel-dot.activo { background-color: var(--rosa); }
+.carrusel-slide-placeholder { color: var(--texto-suave); border-color: var(--borde); }
+.galeria-item { background-color: var(--vidrio); border-color: var(--borde); color: var(--texto-suave); }
+.photo-placeholder { background-color: rgba(255, 255, 255, 0.12); }
+.tanque-ver-mas, .mapa-ver-mas { color: #fff; border-color: var(--rosa); font-family: inherit; background: none; }
+.tanque-ver-mas:hover { background-color: var(--rosa); }
+.color-swatch.activo, .insight-caja[data-borde] .color-swatch { border-color: #fff; }
+.proto-video-wrap video { border-color: var(--borde); }
+.site-footer { color: var(--texto-suave); }
+
+/* ---------- 2do Prototipo: VARADO ---------- */
+.section--space h1 { color: var(--rosa); }
+
+.hero-varado {
+  position: relative;
+  overflow: hidden;
+  min-height: 520px;
+  margin-top: 1.5rem;
+  padding: 3rem 2.5rem;
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  background: linear-gradient(90deg, rgba(5, 3, 15, 0.95) 0%, rgba(5, 3, 15, 0.7) 55%, rgba(27, 10, 92, 0.35) 100%);
+}
+.hero-varado > *:not(.planeta) { position: relative; z-index: 2; max-width: 520px; }
+.hero-kicker { color: var(--rosa); font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; font-size: 1rem; }
+.hero-titulo { font-size: clamp(3.5rem, 11vw, 6.5rem); font-weight: 700; letter-spacing: 0.08em; line-height: 1; margin: 0.4rem 0 1.2rem; }
+.hero-texto { color: var(--texto); font-size: 1.2rem; margin-bottom: 1rem; }
+.hero-regla { color: var(--rosa); font-weight: 500; font-size: 1.15rem; }
+
+
+/* HUD (Cartera / Motor / Robot / Deuda) */
+.hud-demo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  background: var(--vidrio);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+}
+.hud-item span { display: block; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--texto-suave); }
+.hud-item strong { display: block; font-size: 1.6rem; color: #fff; }
+.barra { display: block; height: 4px; margin-top: 6px; border-radius: 2px; background: repeating-linear-gradient(90deg, rgba(255,255,255,.3) 0 14px, transparent 14px 18px); }
+.barra--larga { background: repeating-linear-gradient(90deg, rgba(255,255,255,.3) 0 40px, transparent 40px 46px); }
+
+/* Tarjetas de días / finales */
+.dias-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.1rem; }
+.dia-card {
+  padding: 1.1rem 1.25rem;
+  background: var(--vidrio);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.dia-card:hover { border-color: var(--rosa); transform: translateY(-3px); }
+.dia-num { color: var(--rosa); font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; font-size: 0.85rem; }
+.dia-card h3 { font-size: 1.3rem; margin: 0.2rem 0 0.4rem; }
+.dia-card p { color: var(--texto-suave); font-size: 1.02rem; line-height: 1.45; }
+
+/* Datos reales y fuentes */
+.datos-panel { padding: 1.5rem 1.75rem; background: var(--vidrio); border: 1px solid var(--borde); border-radius: 10px; }
+.datos-lead { color: var(--rosa); font-size: 1.3rem; font-weight: 500; margin-bottom: 0.8rem; }
+.datos-panel ul { margin: 0 0 1rem 1.2rem; }
+.datos-panel li { margin-bottom: 0.5rem; color: var(--texto); }
+.datos-fuentes { margin-top: 1rem; font-size: 0.85rem; color: var(--texto-suave); }
+
+@media (max-width: 700px) {
+  .nav-links { background-color: var(--noche); border-color: var(--borde); }
+  .nav-links li { border-top-color: var(--borde); }
+  .hero-varado { padding: 2rem 1.25rem; min-height: 620px; }
+}
+
+
+/* ---------- Ajustes 2do Prototipo (v2) ---------- */
+/* Portada: imagen real del juego como fondo */
+.hero-varado {
+  background:
+    linear-gradient(90deg, rgba(5, 3, 15, 0.92) 0%, rgba(5, 3, 15, 0.6) 45%, rgba(5, 3, 15, 0) 80%),
+    url('img/proto2/inicio-fondo.png') center / cover no-repeat,
+    #05030f;
+  min-height: 560px;
+}
+
+/* Por qué esta propuesta */
+.porque-panel {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.25rem 1.75rem;
+  background: rgba(75, 75, 140, 0.45);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 14px;
+}
+.porque-panel ul { margin-left: 1.2rem; }
+.porque-panel li { margin-bottom: 0.4rem; font-size: 1.25rem; }
+
+/* En qué nos basamos */
+.bases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; }
+.base-card {
+  text-align: center;
+  padding: 1.5rem 1.25rem;
+  background: rgba(35, 110, 170, 0.75);
+  border-radius: 14px;
+}
+.base-icono {
+  width: 72px; height: 72px; margin: 0 auto 0.8rem;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: #48dbf0; color: #0b0630;
+  font-size: 2rem; font-weight: 700;
+}
+.base-card h3 { font-size: 1.3rem; margin-bottom: 0.3rem; }
+.base-card p { color: var(--texto); font-size: 1.05rem; line-height: 1.4; }
+
+/* Cita */
+.cita { margin: 3.5rem auto 0; max-width: 820px; text-align: center; }
+.cita p { font-size: 1.6rem; line-height: 1.5; text-shadow: 0 0 12px rgba(255, 255, 255, 0.45); }
+.cita cite { display: block; margin-top: 1rem; text-align: right; color: var(--texto-suave); font-style: normal; }
+
+/* Galerías de imágenes */
+.proto-nota { margin: 0 0 0.9rem; color: var(--texto-suave); font-size: 0.95rem; }
+.proto-nota code { background: rgba(255, 255, 255, 0.1); padding: 1px 6px; border-radius: 4px; }
+.galeria--grande { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.galeria-item { position: relative; background-color: var(--vidrio); border-color: var(--borde); color: var(--texto-suave); }
+.galeria-item img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* Prototipo Figma */
+.figma-embed { position: relative; width: 100%; aspect-ratio: 16 / 9; border: 1px solid var(--borde); border-radius: 10px; overflow: hidden; background: #000; }
+.figma-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.btn-figma { display: inline-block; padding: 0.55rem 1.2rem; border: 1px solid var(--rosa); border-radius: 8px; color: #fff; font-weight: 600; letter-spacing: 0.05em; }
+.btn-figma:hover { background: var(--rosa); }
