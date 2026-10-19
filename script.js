@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
       dots.forEach(function (dot, di) {
         dot.classList.toggle('activo', di === indice);
       });
+      carrusel.dispatchEvent(new CustomEvent('cambio', { detail: indice }));
     }
 
     function siguiente() {
@@ -63,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function iniciarAuto() {
       detenerAuto();
+      if (carrusel.dataset.auto === 'false') return;
       timer = setInterval(siguiente, AUTO_ROTATE_MS);
     }
 
@@ -162,5 +164,24 @@ document.addEventListener('DOMContentLoaded', function () {
         alternar();
       });
     }
+  });
+});
+
+/* ============================
+   Pruebas: los comentarios cambian junto con la foto del carrusel
+============================ */
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.prueba-contenido').forEach(function (fila) {
+    var carrusel = fila.querySelector('.carrusel');
+    var grupos = Array.from(fila.querySelectorAll('.comentarios-grupo'));
+    var panel = fila.querySelector('.comentarios');
+    if (!carrusel || !grupos.length) return;
+
+    carrusel.addEventListener('cambio', function (e) {
+      grupos.forEach(function (g, gi) {
+        g.classList.toggle('activo', gi === e.detail);
+      });
+      if (panel) panel.scrollTop = 0;
+    });
   });
 });
