@@ -853,3 +853,62 @@ h1, h2, h3, h4 { letter-spacing: 0.02em; color: #fff; }
 .comentario-texto img { display: block; width: 100%; height: auto; margin-top: 0.6rem; border-radius: 6px; }
 @keyframes aparecer { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 @media (max-width: 800px) { .prueba-contenido { grid-template-columns: 1fr; } }
+
+
+/* ---------- 3er Prototipo ---------- */
+.p3-intro { max-width: 760px; padding: 1.25rem 1.5rem; background: var(--vidrio); border: 1px solid var(--borde); border-radius: 10px; }
+.p3-intro p { margin-bottom: 0.7rem; color: var(--texto); }
+.p3-intro p:last-child { margin-bottom: 0; }
+.p3-intro strong { color: var(--rosa); }
+
+.p3-tanques { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.1rem; margin-top: 1.25rem; align-items: start; }
+.p3-tanque { background: var(--vidrio); border: 1px solid var(--borde); border-radius: 10px; overflow: hidden; }
+.p3-tanque[open] { border-color: var(--rosa); }
+.p3-tanque summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.25rem; font-size: 1.35rem; font-weight: 700; color: #fff; background: rgba(255, 255, 255, 0.04); }
+.p3-tanque summary::-webkit-details-marker { display: none; }
+.p3-tanque summary::after { content: '+'; color: var(--rosa); font-size: 1.4rem; font-weight: 400; transition: transform 0.25s ease; }
+.p3-tanque[open] summary::after { transform: rotate(45deg); }
+.p3-tanque summary:hover { background: rgba(255, 0, 123, 0.14); }
+.p3-tanque summary:focus-visible { outline: 2px solid var(--rosa); outline-offset: -2px; }
+.p3-tanque-cuerpo { padding: 0.9rem 1.25rem 1.25rem; font-size: 1.02rem; line-height: 1.5; color: var(--texto-suave); }
+.p3-tanque-cuerpo p { margin-bottom: 0.7rem; }
+.p3-tanque-cuerpo ul { margin: 0 0 0.8rem 1.1rem; }
+.p3-tanque-cuerpo li { margin-bottom: 0.45rem; }
+.p3-tanque-cuerpo strong { color: #fff; }
+.p3-nota { padding-left: 0.8rem; border-left: 3px solid var(--rosa); font-size: 0.97rem; }
+.p3-lista-etiquetas li strong { color: #48dbf0; }
+
+.p3-consejos { margin: 1.25rem auto 0; }
+.p3-consejos li { font-size: 1.1rem; }
+
+/* Reto de diseño */
+.reto-hero { max-width: 860px; margin: 0.5rem auto 1.5rem; padding: 2rem 2.25rem; background: linear-gradient(135deg, rgba(27, 10, 92, 0.75), rgba(5, 3, 15, 0.8)); border: 1px solid var(--borde); border-left: 5px solid var(--rosa); border-radius: 14px; }
+.reto-hero p { font-size: clamp(1.4rem, 3.2vw, 2.1rem); font-weight: 600; line-height: 1.35; color: #fff; text-shadow: 0 0 14px rgba(255, 255, 255, 0.25); }
+.reto-partes { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; max-width: 860px; margin: 0 auto; }
+.reto-partes div { padding: 1rem 1.15rem; background: var(--vidrio); border: 1px solid var(--borde); border-radius: 10px; }
+.reto-partes h3 { font-size: 1.15rem; color: #48dbf0; margin-bottom: 0.25rem; }
+.reto-partes p { font-size: 1rem; line-height: 1.4; color: var(--texto-suave); }
+
+/* Esquema de conexiones */
+.esquema-flujo { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.5rem 0.4rem; max-width: 820px; margin: 0 auto 1.5rem; }
+.esquema-paso { padding: 0.4rem 1rem; background: var(--vidrio); border: 1px solid var(--borde); border-radius: 999px; font-weight: 600; color: #fff; }
+.esquema-paso--reto { border-color: var(--rosa); background: rgba(255, 0, 123, 0.18); }
+.esquema-flecha { color: var(--rosa); font-weight: 700; }
+
+.mapa-texto-largo--html { white-space: normal; }
+.mapa-texto-largo--html p { margin-bottom: 0.7rem; }
+.mapa-texto-largo--html ul { margin: 0 0 0.8rem 1.1rem; }
+.mapa-texto-largo--html li { margin-bottom: 0.45rem; }
+.mapa-texto-largo--html strong { color: #fff; }
+.mapa-sub { color: #48dbf0; font-weight: 600; }
+.mapa-enlace { margin-top: 0.4rem; color: var(--rosa); font-weight: 600; }
+.mapa-principios { margin: 0 0 0.8rem; }
+.mapa-principios dt { color: #fff; font-weight: 600; margin-top: 0.6rem; }
+.mapa-principios dd { margin: 0; color: var(--texto-suave); }
+
+@media (max-width: 700px) {
+  .reto-hero { padding: 1.5rem 1.25rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .p3-tanque summary::after { transition: none; }
+}

@@ -858,7 +858,213 @@ Aunque ambas propuestas surgieron de la misma investigación, responden a dimens
 
     <section id="proto3" class="section section--wide section--space">
       <h1>3er Prototipo</h1>
-      <p>Contenido del tercer prototipo.</p>
+
+      <!-- ===== Descripción del prototipo ===== -->
+      <div class="proto-bloque">
+        <h2>Descripción del prototipo</h2>
+        <div class="p3-intro">
+          <p>El prototipo de alta fidelidad es una experiencia interactiva que ayuda a adultos jóvenes a practicar su <strong>autonomía financiera</strong>: tomar decisiones propias sobre su dinero y sostenerlas, aun bajo presión, cansancio o imprevistos.</p>
+          <p>Nace del proyecto inicial sobre jóvenes que no ahorran, pero el problema ya no se plantea como falta de conocimiento. Se plantea como la dificultad de convertir lo que ya se sabe en acciones constantes.</p>
+        </div>
+
+        <div class="p3-tanques">
+          <details class="p3-tanque" open>
+            <summary>Usuario</summary>
+            <div class="p3-tanque-cuerpo">
+              <p>Persona joven adulta que quiere cuidar su dinero y cumplir metas personales, como un viaje, un equipo nuevo o un fondo de reserva. Tiene claro que debería ahorrar; lo que le cuesta es sostenerlo en el día a día.</p>
+              <ul class="p3-lista-etiquetas">
+                <li><strong>Autoengaño.</strong> Justifica pequeños gastos que parecen inofensivos y que, acumulados, vacían su fondo.</li>
+                <li><strong>Culpa.</strong> Quedarse sin dinero lo vive como falta de disciplina, y eso daña su relación con el dinero.</li>
+                <li><strong>Desprotección.</strong> Sin colchón, un imprevisto desestabiliza todo.</li>
+              </ul>
+              <p>Las cartas de amor y ruptura con las finanzas mostraron una relación ambivalente: gratitud y esperanza mezcladas con miedo, agotamiento y angustia, y ciclos de alivio momentáneo seguidos de meses de incertidumbre.</p>
+              <p class="p3-nota">El proyecto no busca resolver la causa económica de fondo, como los salarios o el costo de la vivienda, sino la parte que sí puede intervenir el diseño: la relación de la persona con sus propias decisiones. Este perfil es una hipótesis de trabajo, pendiente de las pruebas de acercamiento con usuarios.</p>
+            </div>
+          </details>
+
+          <details class="p3-tanque">
+            <summary>Teoría</summary>
+            <div class="p3-tanque-cuerpo">
+              <p>Cinco ideas explican el problema y justifican que la solución sea un juego.</p>
+              <ul>
+                <li><strong>Escasez</strong> (Mullainathan y Shafir, 2013). Tener poco dinero ocupa la mente y genera un efecto túnel hacia lo urgente. El colchón da tiempo para decidir con calma.</li>
+                <li><strong>Descuento hiperbólico</strong> (Ainslie). Se sobrevalora la recompensa inmediata; por eso el juego comprime el tiempo en diez días.</li>
+                <li><strong>Retórica procesal</strong> (Bogost). Los juegos persuaden por sus reglas, no por sermones: el jugador vive qué pasa sin reserva.</li>
+                <li><strong>Círculo mágico</strong> (Huizinga). Fallar dentro del juego no cuesta dinero real, así que se puede recuperar sin culpa.</li>
+                <li><strong>Cognición corporizada y materialidad.</strong> Recursos visibles que crecen o se agotan (motor, robot, cartera) hacen tangible la pérdida y la conservación.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="p3-tanque">
+            <summary>Diseño</summary>
+            <div class="p3-tanque-cuerpo">
+              <p>Sigue la lógica de VARADO: eres un ingeniero novato cuya nave se estrelló en un planeta que colapsará en diez días. Cada día tus jefes mandan piezas y tú decides cómo usarlas, mientras ÍO, la IA de la nave, narra la bitácora.</p>
+              <ul>
+                <li>El <strong>motor</strong> es el ahorro y la meta.</li>
+                <li>El <strong>robot</strong> es el colchón y solo se abre en emergencias.</li>
+                <li>La <strong>cartera</strong> es el dinero disponible para el día.</li>
+                <li><strong>Krel</strong> es la deuda con interés.</li>
+                <li>La <strong>ruleta</strong> es la tentación del atajo.</li>
+              </ul>
+              <p>Hay tres finales: <em>Escape seguro</em> (motor reparado y colchón), <em>Escape frágil</em> (despegas sin margen) y <em>Rescate</em> (no logras reparar el motor). Al terminar, el juego revela los datos reales detrás de cada número, con sus fuentes.</p>
+              <p class="p3-nota">Frente al primer prototipo, una app con calculadoras y tableros, el diseño pasa de una herramienta que informa a una experiencia que se vive.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- ===== Instrucciones de uso ===== -->
+      <div class="proto-bloque">
+        <h2>Instrucciones de uso</h2>
+        <div class="hud-demo">
+          <div class="hud-item"><span>Cartera</span><strong>Lo que puedes gastar hoy</strong></div>
+          <div class="hud-item"><span>Motor</span><strong>Tu ahorro</strong><i class="barra"></i></div>
+          <div class="hud-item"><span>Robot</span><strong>Tu colchón</strong><i class="barra barra--larga"></i></div>
+          <div class="hud-item"><span>Krel</span><strong>Tu deuda</strong></div>
+        </div>
+
+        <div class="dias-grid">
+          <article class="dia-card"><span class="dia-num">Paso 1</span><h3>Lee la bitácora</h3><p>ÍO te cuenta qué pasó y qué decisión toca hoy. Tu meta: reparar el motor y despegar.</p></article>
+          <article class="dia-card"><span class="dia-num">Paso 2</span><h3>Revisa tus recursos</h3><p>Mira cuánto tienes en la cartera, el motor, el robot y la deuda con Krel antes de decidir.</p></article>
+          <article class="dia-card"><span class="dia-num">Paso 3</span><h3>Reparte las piezas</h3><p>Cada día llegan piezas nuevas. Decide cuánto va a la cartera, al motor y al robot.</p></article>
+          <article class="dia-card"><span class="dia-num">Paso 4</span><h3>Resuelve el imprevisto</h3><p>Si no alcanza, puedes tomar del motor, pedir a Krel (con interés) o apostar en la ruleta. Cada opción tiene consecuencias.</p></article>
+          <article class="dia-card"><span class="dia-num">Paso 5</span><h3>Cierra el día</h3><p>Revisa cómo quedaron tus recursos. El robot solo se abre en emergencias.</p></article>
+          <article class="dia-card"><span class="dia-num">Paso 6</span><h3>Despega y descubre tu final</h3><p>En el día 10 sabrás si lograste un escape seguro, uno frágil o un rescate, y verás los datos reales detrás del juego.</p></article>
+        </div>
+
+        <div class="porque-panel p3-consejos">
+          <ul>
+            <li>No hay respuestas correctas únicas: el juego te deja equivocarte sin perder dinero real.</li>
+            <li>El juego sugiere una meta base de piezas, pero puedes apartar más y llegar antes.</li>
+            <li>Al final encontrarás el mensaje de cierre y las fuentes de cada dato.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ===== Reto de diseño ===== -->
+      <div class="proto-bloque">
+        <h2>Reto de diseño</h2>
+        <blockquote class="reto-hero">
+          <p>¿Cómo podríamos permitir a adultos jóvenes practicar decisiones de ahorro en un entorno seguro, para que ganen control y tranquilidad sobre su dinero y sostengan sus metas sin autoengaño ni culpa?</p>
+        </blockquote>
+        <div class="reto-partes">
+          <div><h3>Practicar decisiones</h3><p>Del “sé qué debo hacer” al hacerlo.</p></div>
+          <div><h3>Entorno seguro</h3><p>Fallar no cuesta dinero ni autoestima.</p></div>
+          <div><h3>Control y tranquilidad</h3><p>Colchón, claridad y confianza en lo que se aconseja.</p></div>
+          <div><h3>Sin autoengaño ni culpa</h3><p>Las dos emociones que rompen el hábito.</p></div>
+        </div>
+      </div>
+
+      <!-- ===== Esquema de conexiones ===== -->
+      <div class="proto-bloque">
+        <h2>Esquema de conexiones</h2>
+        <div class="esquema-flujo" aria-label="Recorrido: problema, usuario, insights, teoría, principios, reto y propuesta">
+          <span class="esquema-paso">Problema</span><span class="esquema-flecha">→</span>
+          <span class="esquema-paso">Usuario</span><span class="esquema-flecha">→</span>
+          <span class="esquema-paso">Insights</span><span class="esquema-flecha">→</span>
+          <span class="esquema-paso">Teoría</span><span class="esquema-flecha">→</span>
+          <span class="esquema-paso">Principios</span><span class="esquema-flecha">→</span>
+          <span class="esquema-paso esquema-paso--reto">Reto</span><span class="esquema-flecha">→</span>
+          <span class="esquema-paso esquema-paso--reto">Propuesta</span>
+        </div>
+
+        <div class="mapa-conexiones">
+          <div class="mapa-nodo">
+            <h4>Problema</h4>
+            <div class="mapa-texto"><div class="mapa-texto-largo mapa-texto-largo--html">
+              <p>Los adultos jóvenes que quieren ahorrar no logran sostenerlo. No les falta información: les falta convertir lo que saben en acciones constantes, porque la presión del momento, el autoengaño y la culpa terminan decidiendo por ellos.</p>
+              <p>El proyecto no pretende resolver la causa económica de fondo, sino la relación de la persona con sus propias decisiones.</p>
+              <p class="mapa-enlace">Se conecta con → Usuario</p>
+            </div></div>
+          </div>
+
+          <div class="mapa-nodo">
+            <h4>Usuario</h4>
+            <div class="mapa-texto"><div class="mapa-texto-largo mapa-texto-largo--html">
+              <p>Persona joven adulta con metas personales (viaje, equipo nuevo, fondo de reserva) que sabe que debería ahorrar y no logra sostenerlo.</p>
+              <ul><li>Se autoengaña con gastos pequeños que vacían su fondo.</li><li>Se culpa al quedarse en ceros.</li><li>Se siente desprotegida sin colchón.</li></ul>
+              <p>Hipótesis de trabajo, pendiente de validar con pruebas de acercamiento.</p>
+              <p class="mapa-enlace">Se conecta con → Insights</p>
+            </div></div>
+          </div>
+
+          <div class="mapa-nodo">
+            <h4>Insights</h4>
+            <div class="mapa-texto"><div class="mapa-texto-largo mapa-texto-largo--html">
+              <p class="mapa-sub">De las Love &amp; Breakup Letters</p>
+              <ul>
+                <li><strong>Autoengaño que termina en culpa y desprotección.</strong> Justifica compras pequeñas “indispensables en el momento” hasta vaciar sus fondos y siente que traicionó su propia estabilidad.</li>
+                <li><strong>La culpa se lee como falta de disciplina.</strong> Sin límites claros para los antojos, quedarse sin un peso parece un defecto personal y no un problema del entorno.</li>
+                <li><strong>Ciclo de alivio y miedo.</strong> El dinero da un momento de dopamina seguido de meses de incertidumbre, y la persona carga sola con la preocupación.</li>
+              </ul>
+              <p class="mapa-sub">Del primer prototipo</p>
+              <ul>
+                <li><strong>Sabe, pero no actúa.</strong> Abandona las apps porque capturar datos es tedioso, moralista y no da gratificación. Es una fricción emocional y de diseño, no falta de conocimiento.</li>
+                <li><strong>El ahorro sin objetivo tangible pierde ante la tentación.</strong></li>
+                <li><strong>Las apps parecen hoja de cálculo</strong> y se abandonan por la experiencia emocional, no por falta de funciones.</li>
+              </ul>
+              <p class="mapa-enlace">Se conecta con → Teoría</p>
+            </div></div>
+          </div>
+
+          <div class="mapa-nodo">
+            <h4>Teoría</h4>
+            <div class="mapa-texto"><div class="mapa-texto-largo mapa-texto-largo--html">
+              <ul>
+                <li><strong>Escasez</strong> explica por qué la presión quita capacidad de planear.</li>
+                <li><strong>Descuento hiperbólico</strong> explica por qué gana la recompensa inmediata.</li>
+                <li><strong>Retórica procesal</strong> explica por qué un juego enseña mejor que un sermón.</li>
+                <li><strong>Círculo mágico</strong> explica por qué fallar sin costo real alivia la culpa.</li>
+                <li><strong>Cognición corporizada</strong> explica por qué el dinero visible se siente más.</li>
+              </ul>
+              <p class="mapa-enlace">Se conecta con → Principios de diseño</p>
+            </div></div>
+          </div>
+
+          <div class="mapa-nodo">
+            <h4>Principios de diseño</h4>
+            <div class="mapa-texto"><div class="mapa-texto-largo mapa-texto-largo--html">
+              <dl class="mapa-principios">
+                <dt>Confianza y credibilidad</dt><dd>Los consejos tienen respaldo visible y no suenan a sermón.</dd>
+                <dt>Familiaridad y usabilidad</dt><dd>Patrones conocidos y bajo esfuerzo para aprender.</dd>
+                <dt>Reducción de incertidumbre</dt><dd>El jugador siempre ve cuánto falta y qué viene.</dd>
+                <dt>Claridad y lenguaje simple</dt><dd>Metáforas en vez de jerga: motor, robot, Krel.</dd>
+                <dt>Transparencia</dt><dd>El cierre conecta la ficción con datos reales y cita sus fuentes.</dd>
+                <dt>Defaults inteligentes con control del usuario</dt><dd>La app sugiere un punto de partida y la persona decide.</dd>
+                <dt>Distancia segura</dt><dd>Gamificación y fantasía para fracasar sin costo real ni culpa.</dd>
+              </dl>
+              <p class="mapa-enlace">Se conecta con → Reto de diseño</p>
+            </div></div>
+          </div>
+
+          <div class="mapa-nodo">
+            <h4>Reto de diseño</h4>
+            <div class="mapa-texto"><div class="mapa-texto-largo mapa-texto-largo--html">
+              <p>¿Cómo podríamos permitir a adultos jóvenes practicar decisiones de ahorro en un entorno seguro, para que ganen control y tranquilidad sobre su dinero y sostengan sus metas sin autoengaño ni culpa?</p>
+              <p class="mapa-enlace">Se conecta con → Propuesta</p>
+            </div></div>
+          </div>
+
+          <div class="mapa-nodo">
+            <h4>Propuesta</h4>
+            <div class="mapa-texto"><div class="mapa-texto-largo mapa-texto-largo--html">
+              <p>VARADO: un juego de diez días en el que cada decisión financiera ocurre dentro de una historia. El motor es el ahorro, el robot es el colchón, Krel es la deuda y la ruleta es el atajo. Tres finales posibles y, al terminar, los datos reales detrás de cada número.</p>
+            </div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Video demostración ===== -->
+      <div class="proto-bloque">
+        <h2>Video demostración</h2>
+        <div class="proto-video-wrap">
+          <video controls>
+            <source src="videos/videoprot3.mp4" type="video/mp4">
+            Tu navegador no soporta video HTML5.
+          </video>
+        </div>
+      </div>
     </section>
 
     <section id="nosotros" class="section section--wide">
