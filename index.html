@@ -917,6 +917,11 @@ Aunque ambas propuestas surgieron de la misma investigación, responden a dimens
       <!-- ===== Instrucciones de uso ===== -->
       <div class="proto-bloque">
         <h2>Instrucciones de uso</h2>
+
+        <div class="p3-intro">
+          <p><strong>VARADO</strong> es un simulador espacial enfocado en el ahorro y la administración del dinero. Eres un ingeniero espacial novato cuya nave se accidentó en un planeta desértico. Tienes <strong>10 días</strong> antes de que la estrella más cercana explote, así que debes reunir los recursos para reparar el motor y escapar a tiempo.</p>
+        </div>
+
         <div class="hud-demo">
           <div class="hud-item"><span>Cartera</span><strong>Lo que puedes gastar hoy</strong></div>
           <div class="hud-item"><span>Motor</span><strong>Tu ahorro</strong><i class="barra"></i></div>
@@ -924,22 +929,38 @@ Aunque ambas propuestas surgieron de la misma investigación, responden a dimens
           <div class="hud-item"><span>Krel</span><strong>Tu deuda</strong></div>
         </div>
 
+        <h3 class="p3-subtitulo">Cada día y cada noche eliges una actividad</h3>
         <div class="dias-grid">
-          <article class="dia-card"><span class="dia-num">Paso 1</span><h3>Lee la bitácora</h3><p>ÍO te cuenta qué pasó y qué decisión toca hoy. Tu meta: reparar el motor y despegar.</p></article>
-          <article class="dia-card"><span class="dia-num">Paso 2</span><h3>Revisa tus recursos</h3><p>Mira cuánto tienes en la cartera, el motor, el robot y la deuda con Krel antes de decidir.</p></article>
-          <article class="dia-card"><span class="dia-num">Paso 3</span><h3>Reparte las piezas</h3><p>Cada día llegan piezas nuevas. Decide cuánto va a la cartera, al motor y al robot.</p></article>
-          <article class="dia-card"><span class="dia-num">Paso 4</span><h3>Resuelve el imprevisto</h3><p>Si no alcanza, puedes tomar del motor, pedir a Krel (con interés) o apostar en la ruleta. Cada opción tiene consecuencias.</p></article>
-          <article class="dia-card"><span class="dia-num">Paso 5</span><h3>Cierra el día</h3><p>Revisa cómo quedaron tus recursos. El robot solo se abre en emergencias.</p></article>
-          <article class="dia-card"><span class="dia-num">Paso 6</span><h3>Despega y descubre tu final</h3><p>En el día 10 sabrás si lograste un escape seguro, uno frágil o un rescate, y verás los datos reales detrás del juego.</p></article>
+          <article class="dia-card"><span class="dia-num">Actividad 1</span><h3>Trabajar en la mina</h3><p>Obtienes recursos para tu cartera.</p></article>
+          <article class="dia-card"><span class="dia-num">Actividad 2</span><h3>Explorar el entorno</h3><p>Descubres nuevas oportunidades.</p></article>
+          <article class="dia-card"><span class="dia-num">Actividad 3</span><h3>Descansar en la nave</h3><p>Recuperas energía antes de seguir.</p></article>
         </div>
 
         <div class="porque-panel p3-consejos">
-          <ul>
-            <li>No hay respuestas correctas únicas: el juego te deja equivocarte sin perder dinero real.</li>
-            <li>El juego sugiere una meta base de piezas, pero puedes apartar más y llegar antes.</li>
-            <li>Al final encontrarás el mensaje de cierre y las fuentes de cada dato.</li>
-          </ul>
+          <p>Además de recolectar materiales, decides <strong>qué porcentaje de tu dinero destinas al ahorro</strong>. Cada decisión influye en tu progreso y en cómo administras tus recursos. El objetivo es aprender a tomar decisiones financieras y entender por qué el ahorro te ayuda a alcanzar una meta.</p>
         </div>
+
+        <h3 class="p3-subtitulo">Controles</h3>
+        <div class="p3-controles">
+          <div class="p3-control-caja">
+            <h4>Computadora</h4>
+            <ul class="p3-teclas">
+              <li><span class="p3-tecla">W A S D</span> Moverte</li>
+              <li><span class="p3-tecla">Q</span><span class="p3-tecla">E</span> Girar la cámara</li>
+              <li><span class="p3-tecla">F</span> Entrar</li>
+              <li><span class="p3-tecla">1 – 6</span> Elegir opciones</li>
+            </ul>
+          </div>
+          <div class="p3-control-caja">
+            <h4>Dispositivos móviles</h4>
+            <p>Usa los controles táctiles que aparecen en la pantalla para moverte, interactuar con el entorno y seleccionar las opciones disponibles.</p>
+          </div>
+        </div>
+
+        <h3 class="p3-subtitulo">Plataformas disponibles</h3>
+        <p class="p3-plataformas">VARADO está diseñado para computadoras y dispositivos móviles. Puedes jugarlo con una versión descargable o directamente desde nuestra página web.</p>
+
+        <p class="p3-cierre">Cada decisión cuenta. ¿Lograrás escapar a tiempo?</p>
       </div>
 
       <!-- ===== Reto de diseño ===== -->
@@ -1058,11 +1079,10 @@ Aunque ambas propuestas surgieron de la misma investigación, responden a dimens
       <!-- ===== Video demostración ===== -->
       <div class="proto-bloque">
         <h2>Video demostración</h2>
-        <div class="proto-video-wrap">
-          <video controls>
-            <source src="videos/videoprot3.mp4" type="video/mp4">
-            Tu navegador no soporta video HTML5.
-          </video>
+        <p class="proto-nota p3-yt-link"><a class="btn-figma" href="https://youtu.be/AtQoxxpECqw" target="_blank" rel="noopener">Ver en YouTube ↗</a></p>
+        <div class="p3-yt-wrap">
+          <!-- Cambia ID_DEL_VIDEO por el ID de tu video de YouTube (lo que va después de v= en el link) -->
+          <iframe src="https://www.youtube.com/embed/AtQoxxpECqw" title="Video demostración del 3er prototipo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
       </div>
     </section>
