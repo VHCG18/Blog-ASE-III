@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#2b2a55">
+    <title>Varado</title>
+    <link rel="icon" type="image/png" href="TemplateData/favicon.png">
+    <link rel="stylesheet" href="TemplateData/style.css">
+  </head>
+  <body>
+    <div id="juego">
+      <canvas id="unity-canvas" tabindex="-1"></canvas>
+
+      <!-- Pantalla de carga con el fondo del menú -->
+      <div id="carga">
+        <div class="titulo">VARADO</div>
+        <div class="carga-abajo">
+          <div class="carga-texto"><span id="carga-estado">Cargando</span> <span id="carga-por">0 %</span></div>
+          <div class="barra"><div id="barra-llena"></div></div>
+          <div class="carga-nota" id="carga-nota"></div>
+        </div>
+      </div>
+
+      <!-- Al terminar de cargar: un clic o toque para empezar (da el teclado al juego y enciende el sonido) -->
+      <div id="empezar" hidden>
+        <button type="button" id="boton-empezar">
+          <span class="empezar-titulo">Jugar</span>
+          <span class="empezar-nota" id="empezar-nota">Haz clic para empezar</span>
+        </button>
+      </div>
+
+      <!-- Celular en vertical: el juego es horizontal -->
+      <div id="girar">
+        <div class="girar-icono"></div>
+        <div class="girar-texto">Gira tu celular</div>
+        <div class="girar-nota">Varado se juega en horizontal.<br>Si no gira, desactiva el bloqueo de rotación.</div>
+      </div>
+
+      <div id="error" hidden>
+        <div class="error-caja">
+          <div class="error-titulo">No se pudo cargar el juego</div>
+          <div class="error-texto" id="error-texto"></div>
+          <button type="button" onclick="location.reload()">Volver a intentar</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // ---- Celular o computadora (igual que Plugins/WebGL/VaradoWeb.jslib). «?modo=movil» o «?modo=pc» lo fuerzan.
+      var esMovil = (function () {
+        var forzado = /[?&]modo=(movil|pc)\b/i.exec(location.search || "");
+        if (forzado) return forzado[1].toLowerCase() === "movil";
+        var ua = navigator.userAgent || "";
+        if (/Android|iPhone|iPad|iPod|Mobile|Silk|Kindle|BlackBerry|Opera Mini|IEMobile/i.test(ua)) return true;
+        return /Macintosh/i.test(ua) && navigator.maxTouchPoints > 1;
+      })();
+      document.documentElement.classList.add(esMovil ? "movil" : "pc");
+      document.getElementById("carga-nota").textContent = esMovil
+        ? "Se juega con los controles en pantalla, en horizontal."
+        : "Se juega con el teclado y el mouse.";
+      document.getElementById("empezar-nota").textContent = esMovil
+        ? "Toca para empezar (pantalla completa)"
+        : "Haz clic para empezar";
+
+      var canvas = document.querySelector("#unity-canvas");
+      var instancia = null;
+
+      // Mensajes de Unity: solo se muestran los errores (los avisos no le sirven al jugador).
+      function unityShowBanner(msg, type) {
+        if (type === "error") mostrarError(msg);
+        else console.warn("[Varado] " + msg);
+      }
+      function mostrarError(msg) {
+        document.getElementById("carga").hidden = true;
+        document.getElementById("empezar").hidden = true;
+        document.getElementById("error-texto").textContent = String(msg || "Error desconocido") +
+          " · Prueba con Chrome, Edge, Firefox o Safari actualizados.";
+        document.getElementById("error").hidden = false;
+      }
+
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/varado.loader.js";
+      var config = {
+        arguments: [],
+        dataUrl: buildUrl + "/varado.data.unityweb",
+        frameworkUrl: buildUrl + "/varado.framework.js.unityweb",
+        codeUrl: buildUrl + "/varado.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "ASE3",
+        productName: "Varado",
+        productVersion: "0.2.0",
+        showBanner: unityShowBanner,
+      };
+      // En celular, menos resolución: el juego va más fluido y casi no se nota.
+      config.devicePixelRatio = Math.min(window.devicePixelRatio || 1, esMovil ? 1.5 : 2);
+
+      // El teclado es del juego: sin que la página se desplace con espacio o flechas.
+      window.addEventListener("keydown", function (e) {
+        if ([" ", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "PageUp", "PageDown"].indexOf(e.key) >= 0) e.preventDefault();
+      }, { passive: false });
+      // Cualquier clic o toque le devuelve el teclado al juego.
+      window.addEventListener("pointerdown", function () { canvas.focus(); });
+      // Sin menú de clic derecho (el botón derecho gira la cámara).
+      canvas.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+
+      function pantallaCompleta() {
+        var el = document.documentElement;
+        var pedir = el.requestFullscreen || el.webkitRequestFullscreen;
+        if (!pedir) return;
+        try {
+          var p = pedir.call(el);
+          if (p && p.then) p.then(function () {
+            if (screen.orientation && screen.orientation.lock) screen.orientation.lock("landscape").catch(function () {});
+          }).catch(function () {});
+        } catch (e) {}
+      }
+
+      function empezar() {
+        document.getElementById("empezar").hidden = true;
+        if (esMovil) pantallaCompleta();
+        canvas.focus();
+      }
+      document.getElementById("empezar").addEventListener("click", empezar);
+
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onerror = function () { mostrarError("No se encontró " + loaderUrl + "."); };
+      script.onload = function () {
+        createUnityInstance(canvas, config, function (progreso) {
+          var p = Math.round(progreso * 100);
+          document.getElementById("barra-llena").style.width = p + "%";
+          document.getElementById("carga-por").textContent = p + " %";
+          if (p >= 90) document.getElementById("carga-estado").textContent = "Preparando el planeta";
+        }).then(function (unityInstance) {
+          instancia = unityInstance;
+          document.getElementById("carga").hidden = true;
+          document.getElementById("empezar").hidden = false;
+        }).catch(mostrarError);
+      };
+      document.body.appendChild(script);
+    </script>
+  </body>
+</html>

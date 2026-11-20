@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Varado · jugar</title>
+  <meta name="description" content="Juega Varado en el navegador, en computadora o en celular.">
+  <style>
+    body { margin: 0; background: #f4f3f8; color: #1d1b2c; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+    main { max-width: 1280px; margin: 0 auto; padding: 24px 16px 48px; }
+    h1 { margin: 8px 0 4px; font-size: 32px; }
+    p { line-height: 1.6; max-width: 70ch; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Varado</h1>
+  <p>Ejemplo de página con el juego insertado. En tu blog solo necesitas el bloque que va entre los dos comentarios.</p>
+<!-- ===== inicio del bloque de Varado ===== -->
+<div class="varado" data-juego="varado/">
+  <div class="varado-marco">
+    <button type="button" class="varado-portada" aria-label="Jugar Varado">
+      <span class="varado-jugar">▶&nbsp;&nbsp;Jugar</span>
+      <span class="varado-nota"></span>
+    </button>
+  </div>
+  <div class="varado-barra" hidden>
+    <button type="button" class="varado-boton" data-accion="completa">⛶ Pantalla completa</button>
+    <a class="varado-boton" data-accion="pestana" target="_blank" rel="noopener">↗ Abrir en otra pestaña</a>
+  </div>
+</div>
+
+<style>
+  .varado { max-width: 1280px; margin: 1.5rem auto; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .varado [hidden] { display: none !important; }
+  .varado-marco { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #2b2a55; overflow: hidden; border-radius: 6px; }
+  .varado-marco iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+  .varado-portada {
+    position: absolute; inset: 0; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; cursor: pointer;
+    background: #2b2a55 center / cover no-repeat; display: flex; flex-direction: column;
+    align-items: flex-start; justify-content: flex-end; gap: 10px; padding: 0 0 7% 6%; box-sizing: border-box; color: #fff;
+  }
+  .varado-jugar {
+    font-size: clamp(16px, 2.6vw, 30px); letter-spacing: 0.06em; text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.9); border: 3px solid #fff; padding: 0.55em 1.4em; transition: border-color 0.15s, background 0.15s;
+  }
+  .varado-portada:hover .varado-jugar, .varado-portada:focus-visible .varado-jugar { border-color: #FF7CCA; background: #D3006A; }
+  .varado-portada:focus-visible { outline: 3px solid #FF7CCA; outline-offset: -3px; }
+  .varado-nota { font-size: clamp(11px, 1.2vw, 14px); opacity: 0.85; text-shadow: 0 1px 3px rgba(0,0,0,0.6); }
+  .varado-barra { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; margin-top: 8px; }
+  .varado-boton {
+    font: inherit; font-size: 14px; color: #fff; background: #111; border: 2px solid #111; padding: 7px 14px;
+    cursor: pointer; text-decoration: none; border-radius: 4px;
+  }
+  .varado-boton:hover { background: #D3006A; border-color: #D3006A; color: #fff; }
+</style>
+
+<script>
+  (function () {
+    var bloques = document.querySelectorAll(".varado:not([data-listo])");
+    var esMovil = /Android|iPhone|iPad|iPod|Mobile|Silk|Kindle|BlackBerry|Opera Mini|IEMobile/i.test(navigator.userAgent || "") ||
+                  (/Macintosh/i.test(navigator.userAgent || "") && navigator.maxTouchPoints > 1);
+    Array.prototype.forEach.call(bloques, function (bloque) {
+      bloque.setAttribute("data-listo", "");
+      var carpeta = bloque.getAttribute("data-juego") || "/varado/";
+      if (carpeta.slice(-1) !== "/") carpeta += "/";
+      var juego = carpeta + "index.html";
+      var marco = bloque.querySelector(".varado-marco");
+      var portada = bloque.querySelector(".varado-portada");
+      var barra = bloque.querySelector(".varado-barra");
+      portada.style.backgroundImage = "url('" + carpeta + "TemplateData/portada.jpg')";
+      bloque.querySelector(".varado-nota").textContent = esMovil
+        ? "Se abre a pantalla completa · ponlo en horizontal"
+        : "Se juega con teclado y mouse";
+      bloque.querySelector('[data-accion="pestana"]').href = juego;
+      portada.addEventListener("click", function () {
+        if (esMovil) { window.location.href = juego; return; }   // celular: el juego ocupa toda la pantalla
+        var iframe = document.createElement("iframe");
+        iframe.src = juego;
+        iframe.title = "Varado";
+        iframe.allow = "fullscreen; autoplay; gamepad";
+        iframe.setAttribute("allowfullscreen", "");
+        marco.innerHTML = "";
+        marco.appendChild(iframe);
+        barra.hidden = false;
+        iframe.addEventListener("load", function () { iframe.focus(); });
+        bloque.querySelector('[data-accion="completa"]').onclick = function () {
+          var pedir = iframe.requestFullscreen || iframe.webkitRequestFullscreen;
+          if (pedir) pedir.call(iframe); else window.open(juego, "_blank");
+          iframe.focus();
+        };
+      });
+    });
+  })();
+</script>
+<!-- ===== fin del bloque de Varado ===== -->
+</main>
+</body>
+</html>

@@ -3,13 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog: WhatsApp Image</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Blog: WhatsApp Image · VARADO</title>
+  <meta name="description" content="El proceso completo de VARADO: de una app para vivienda compartida a un videojuego sobre ahorro para adultos jóvenes. Juega la versión final en el navegador.">
+  <meta property="og:title" content="VARADO · Blog: WhatsApp Image">
+  <meta property="og:description" content="Del primer prototipo a la entrega final. Juega VARADO en computadora o celular.">
+  <meta property="og:image" content="varado/TemplateData/portada.jpg">
+  <meta name="theme-color" content="#02030a">
+  <link rel="icon" type="image/png" href="varado/TemplateData/favicon.png">
+  <link rel="preload" href="fonts/michroma-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/rajdhani-500.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <a class="saltar" href="#jugar">Saltar al juego</a>
 
   <header class="site-header">
     <nav class="navbar">
@@ -23,18 +30,75 @@
 
       <ul class="nav-links" id="navLinks">
         <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#evolucion">Evolución</a></li>
         <li><a href="#proto1">1er Prototipo</a></li>
         <li><a href="#proto2">2do Prototipo</a></li>
         <li><a href="#proto3">3er Prototipo</a></li>
+        <li><a href="#final">Final</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
+        <li class="nav-jugar"><a href="#jugar">▶ Jugar</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section id="inicio" class="section">
-      <h1>Inicio</h1>
-      <p>Bienvenido al blog. Aquí irá el contenido principal de la sección de inicio.</p>
+    <section id="inicio" class="hero">
+      <div class="hero-marco">
+        <p class="hero-mision">Misión: Sector 2814</p>
+        <h1 class="hero-logo">VARADO</h1>
+        <p class="hero-sub">Entender a los adultos jóvenes de México.</p>
+        <p class="hero-bienvenida">Bienvenido al blog. Aquí documentamos cómo una investigación sobre el dinero de los jóvenes pasó de ser una app a un videojuego: cada entrega, lo que aprendimos y por qué cambiamos de rumbo.</p>
+        <div class="hero-acciones">
+          <a class="boton boton--rosa" href="#jugar">▶ Jugar Varado</a>
+          <a class="boton boton--linea" href="#evolucion">Ver cómo evolucionó</a>
+        </div>
+      </div>
+      <img class="hero-planeta" src="img/final/planeta.webp" alt="" aria-hidden="true">
+    </section>
+
+    <section id="evolucion" class="section section--wide">
+      <h1>La bitácora de la misión</h1>
+      <p class="seccion-intro">Desde el inicio quisimos investigar el dinero y las finanzas de las personas en México. Primero pensamos en los gastos compartidos en salidas de ocio; después lo acotamos a la distribución de gastos informales en viviendas compartidas. De ahí salió la primera entrega, y cada una cambió la siguiente.</p>
+
+      <ol class="trayectoria">
+        <li class="parada parada--01">
+          <a class="parada-enlace" href="#proto1">
+            <span class="parada-num">01</span>
+            <img src="img/final/app-sabee-nido.jpg" alt="Pantallas de las apps SaBEE y Nido" loading="lazy">
+            <span class="parada-titulo">App: SaBEE y Nido</span>
+            <span class="parada-texto">Una app para repartir gastos y tareas en vivienda compartida y llevar el control del dinero personal.</span>
+          </a>
+        </li>
+        <li class="parada parada--02">
+          <a class="parada-enlace" href="#proto2">
+            <span class="parada-num">02</span>
+            <img src="img/final/evolucion-02.jpg" alt="Pantallas del prototipo beta de Varado" loading="lazy">
+            <span class="parada-titulo">Varado beta</span>
+            <span class="parada-texto">Un juego de 10 días en el navegador: cada día, una decisión de dinero dentro de una historia.</span>
+          </a>
+        </li>
+        <li class="parada parada--03">
+          <a class="parada-enlace" href="#proto3">
+            <span class="parada-num">03</span>
+            <img src="img/final/evolucion-03.jpg" alt="Pantallas del tercer prototipo de Varado" loading="lazy">
+            <span class="parada-titulo">Varado en 3D</span>
+            <span class="parada-texto">El planeta se vuelve explorable: minar, explorar o descansar, y decidir qué porcentaje ahorrar.</span>
+          </a>
+        </li>
+        <li class="parada parada--final">
+          <a class="parada-enlace" href="#final">
+            <span class="parada-num">Final</span>
+            <img src="img/final/menu-final.jpg" alt="Menú principal de Varado" loading="lazy">
+            <span class="parada-titulo">Varado, el videojuego</span>
+            <span class="parada-texto">Hecho en Unity: 15 días, personajes, voces y música. Se juega en computadora o en celular.</span>
+          </a>
+        </li>
+      </ol>
+
+      <div class="giro">
+        <p class="giro-titulo">El punto de giro</p>
+        <p class="giro-texto">Con la primera entrega detectamos una amenaza mayor que la vivienda compartida: los jóvenes adultos carecen de educación financiera práctica y de hábitos de ahorro, priorizan la gratificación inmediata y no cuentan con un fondo de emergencia ante imprevistos.</p>
+      </div>
     </section>
 
 
@@ -42,11 +106,23 @@
 
 
     <section id="proto1" class="section section--wide">
-      <h1>1er Prototipo</h1>
+      <h1 class="titulo-etapa"><span class="titulo-etapa-num">01</span> 1er Prototipo</h1>
+
+      <div class="etapa-cabecera">
+        <div class="etapa-texto">
+          <p class="etapa-lead">La misión partió de investigar los conflictos económicos en las viviendas compartidas de México. La primera prueba fue tecnológica: una app, en dos propuestas.</p>
+          <dl class="etapa-datos">
+            <div><dt>Formato</dt><dd>App móvil en Figma</dd></div>
+            <div><dt>Propuestas</dt><dd>SaBEE y Nido</dd></div>
+            <div><dt>Enfoque</dt><dd>Vivienda compartida y control del dinero</dd></div>
+          </dl>
+        </div>
+        <figure class="etapa-figura"><img class="ampliable" src="img/final/app-sabee-nido.jpg" alt="Pantallas de bienvenida de SaBEE y Nido" loading="lazy"></figure>
+      </div>
 
       <div class="proto-bloque">
         <h2>Descripción del prototipo</h2>
-        <div class="proto-descripcion" contenteditable="true">
+        <div class="proto-descripcion">
           Diseñamos una aplicación modular para que quienes comparten vivienda puedan coordinar sus aportaciones y definir acuerdos claros, evitando los conflictos cotidianos de la cohabitación. Además, integra un módulo personal donde cada usuario controla sus ingresos y gastos, facilitando una mejor proyección financiera e impulsando metas de ahorro personalizadas.
         </div>
       </div>
@@ -54,14 +130,12 @@
       <div class="proto-bloque">
         <h2>Pantallas</h2>
         <p class="carrusel-titulo">Prototipo A — 12 pantallas</p>
-        <a href="https://www.figma.com/proto/FkrV48TddsdRfcvajyCAnL/Untitled?node-id=12-146&p=f&t=8WMfjCnvXEejeoNg-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=12%3A146&show-proto-sidebar=1" style="color: blue; text-decoration: underline;">
-    Ir a Prototipo 1
-        </a>
+        <p class="proto-nota"><a class="btn-figma" href="https://www.figma.com/proto/FkrV48TddsdRfcvajyCAnL/Untitled?node-id=12-146&p=f&t=8WMfjCnvXEejeoNg-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=12%3A146&show-proto-sidebar=1" target="_blank" rel="noopener">Ir a Prototipo 1 ↗</a></p>
         <div class="carrusel" id="carrusel-proto-1">
           <div class="carrusel-viewport">
             <div class="carrusel-track">
           <div class="carrusel-slide">
-            <img src="prototipos/1.png" alt="Pantalla 01">
+            <img loading="lazy" src="prototipos/1.png" alt="Pantalla 01">
             <p class="descripcion">
             <strong>Pantalla 1 Bienvenida:</strong> La primera portada muestra el objetivo de la aplicación
             (independencia financiera y habitacional).
@@ -72,13 +146,13 @@
             
           
           <div class="carrusel-slide">
-            <img src="prototipos/2.png" alt="Pantalla 02"><p class="descripcion">
+            <img loading="lazy" src="prototipos/2.png" alt="Pantalla 02"><p class="descripcion">
             <strong>Pantalla 2 Iniciar sesión rápido:</strong> La pantalla muestra opciones de iniciado de sesion asi como datos que se le piden “Ingresar los datos solicitados e inciar sesion”.
             </p>
           </div>
           
           <div class="carrusel-slide">
-            <img src="prototipos/3.png" alt="Pantalla 03"><p class="descripcion">
+            <img loading="lazy" src="prototipos/3.png" alt="Pantalla 03">
             <p class="descripcion">
             <strong>Pantalla 3 Registro clásico:</strong> En caso de no contar aún con una cuenta, crear una con los datos solicitados.
             <br>
@@ -87,21 +161,21 @@
           </div>
           
           <div class="carrusel-slide">
-            <img src="prototipos/4.png" alt="Pantalla 04"><p class="descripcion">
+            <img loading="lazy" src="prototipos/4.png" alt="Pantalla 04"><p class="descripcion">
     <strong>Pantalla 4 Elige tus módulos:</strong> Personalizar la app para no saturarse. Puedes usar una, dos o las tres funciones principales según lo que te interese.
     <br>
     “Selecciona los módulos que quieras utilizar”
 </p></div>
           
           <div class="carrusel-slide">
-            <img src="prototipos/5.png" alt="Pantalla 05"><p class="descripcion">
+            <img loading="lazy" src="prototipos/5.png" alt="Pantalla 05"><p class="descripcion">
     <strong>Pantalla 5 Ponle nombre a la casa:</strong> Al no tener y no ser miembro de una vivienda compartida, crear el departamento o la casa para que todos la reconozcan.
     <br>
     “Crea tu vivienda y ponle un nombre”
 </p></div>
           
           <div class="carrusel-slide">
-            <img src="prototipos/6.png" alt="Pantalla 06"><p class="descripcion">
+            <img loading="lazy" src="prototipos/6.png" alt="Pantalla 06"><p class="descripcion">
     <strong>Pantalla 6 Cuentas claras y división justa:</strong> El resumen de gastos compartidos da la opción de dividirlos de manera equitativa o mediante porcentajes distintos.
     <br>
     “Ve los acuerdos urgentes arriba, como el súper o los servicios.”
@@ -110,42 +184,42 @@
 </p></div>
           
           <div class="carrusel-slide">
-            <img src="prototipos/7.png" alt="Pantalla 07"><p class="descripcion">
+            <img loading="lazy" src="prototipos/7.png" alt="Pantalla 07"><p class="descripcion">
     <strong>Pantalla 7 Calendario de tareas:</strong> Distribución de tareas durante la semana y quiénes son los encargados de realizar cada una.
     <br>
     “Consulta las tareas de la semana y quién debe realizarlas”
 </p></div>
           
           <div class="carrusel-slide">
-            <img src="prototipos/8.png" alt="Pantalla 08"><p class="descripcion">
+            <img loading="lazy" src="prototipos/8.png" alt="Pantalla 08"><p class="descripcion">
     <strong>Pantalla 8 Cambiar de tarea sin drama:</strong> Permite solicitar el intercambio de tareas con los demás en caso de tener algún imprevisto.
     <br>
     “Solicita cambiar una tarea con alguien más”
 </p></div>
           
           <div class="carrusel-slide">
-            <img src="prototipos/9.png" alt="Pantalla 09"><p class="descripcion">
+            <img loading="lazy" src="prototipos/9.png" alt="Pantalla 09"><p class="descripcion">
     <strong>Pantalla 9 Dinero de la semana y gastos hormiga:</strong> Proyección de los ingresos y gastos individuales del usuario, acompañada de una gráfica para ayudarlo a monitorear mejor sus finanzas.
     <br>
     “Consulta tus ingresos, gastos y gastos hormiga de la semana”
 </p></div>
           
           <div class="carrusel-slide">
-            <img src="prototipos/10.png" alt="Pantalla 10"><p class="descripcion">
+            <img loading="lazy" src="prototipos/10.png" alt="Pantalla 10"><p class="descripcion">
     <strong>Pantalla 10 Metas de ahorro y empujón inteligente:</strong> Visualizar cómo crecen tus ahorros personales, así como las metas que hayas propuesto y cómo las estás completando.
     <br>
     “Revisa tu progreso y continúa avanzando hacia tus metas”
 </p></div>
           
           <div class="carrusel-slide">
-            <img src="prototipos/11.png" alt="Pantalla 11"><p class="descripcion">
+            <img loading="lazy" src="prototipos/11.png" alt="Pantalla 11"><p class="descripcion">
     <strong>Pantalla 11 Crear una nueva meta:</strong> Ponerle nombre y cara a lo que quieres comprarte para motivarte a seguir ahorrando.
     <br>
     “Crea una meta y comienza a ahorrar”
 </p></div>
           
           <div class="carrusel-slide">
-            <img src="prototipos/12.png" alt="Pantalla 12"></div>
+            <img loading="lazy" src="prototipos/12.png" alt="Pantalla 12"></div>
         
             </div>
           </div>
@@ -168,133 +242,131 @@
         </div>
 
         <p class="carrusel-titulo">Prototipo B — 18 pantallas</p>
-        <a href="https://www.figma.com/proto/FkrV48TddsdRfcvajyCAnL/Untitled?node-id=48-37&t=mCRdaX6yU3fhQaB8-1" style="color: blue; text-decoration: underline;">
-    Ir a Prototipo 2
-        </a>
+        <p class="proto-nota"><a class="btn-figma" href="https://www.figma.com/proto/FkrV48TddsdRfcvajyCAnL/Untitled?node-id=48-37&t=mCRdaX6yU3fhQaB8-1" target="_blank" rel="noopener">Ir a Prototipo 2 ↗</a></p>
         <div class="carrusel" id="carrusel-proto-2">
           <div class="carrusel-viewport">
             <div class="carrusel-track">
           <div class="carrusel-slide">
-            <img src="prototipos2/1.png" alt="Pantalla 01"><p class="descripcion">
+            <img loading="lazy" src="prototipos2/1.png" alt="Pantalla 01"><p class="descripcion">
     <strong>Pantalla 1: Bienvenida:</strong> Es la primera pantalla que ve el usuario al abrir la app. Incluye un mensaje informativo sobre el objetivo de la aplicación.
     <br>
     “Pulsar comenzar para continuar”
 </p></div>
           
           <div class="carrusel-slide">
-            <img src="prototipos2/2.png" alt="Pantalla 02"><p class="descripcion">
+            <img loading="lazy" src="prototipos2/2.png" alt="Pantalla 02"><p class="descripcion">
     <strong>Pantalla 2: Iniciar sesión:</strong> Permite entrar a una cuenta que ya existe o elegir otras opciones de inicio de sesión.
     <br>
     “Ingresa a tu cuenta para continuar”
 </p></div>
 
           <div class="carrusel-slide">
-            <img src="prototipos2/3.png" alt="Pantalla 03"><p class="descripcion">
+            <img loading="lazy" src="prototipos2/3.png" alt="Pantalla 03"><p class="descripcion">
     <strong>Pantalla 3: Crear cuenta (Registro):</strong> Da de alta a un usuario nuevo en la plataforma. Escribe tu usuario o correo, pon una contraseña y presiona “Registrarse” para crear tu perfil.
     <br>
     “Completa tus datos para crear tu cuenta”
 </p></div>
 
           <div class="carrusel-slide">
-            <img src="prototipos2/4.png" alt="Pantalla 04"><p class="descripcion">
+            <img loading="lazy" src="prototipos2/4.png" alt="Pantalla 04"><p class="descripcion">
     <strong>Pantalla 4: Empezar en una Colmena:</strong> Te da a elegir tu rol de entrada a un hogar. Elige “Crear una colmena” si vas a armar el grupo de tu casa desde cero, o “Unirte a una colmena” si uno de los habitantes ya la creó y te pasó un código.
     <br>
     “Elige cómo quieres entrar a una colmena”
 </p></div>
 
           <div class="carrusel-slide">
-            <img src="prototipos2/5.png" alt="Pantalla 05"><p class="descripcion">
+            <img loading="lazy" src="prototipos2/5.png" alt="Pantalla 05"><p class="descripcion">
     <strong>Pantalla 5: Nombrar el espacio (Paso 1 de 4):</strong> En caso de crear una nueva colmena (hogar), personalizarla para identificarla más fácilmente.
     <br>
     “Ponle un nombre a tu colmena”
 </p></div>
 
           <div class="carrusel-slide">
-            <img src="prototipos2/6.png" alt="Pantalla 06"><p class="descripcion">
+            <img loading="lazy" src="prototipos2/6.png" alt="Pantalla 06"><p class="descripcion">
     <strong>Pantalla 6: Sumar a los roomies (Paso 2 de 4):</strong> Registra quiénes viven ahí agregando a otros usuarios.
     <br>
     “Agrega a las personas que viven contigo”
 </p></div>
 
           <div class="carrusel-slide">
-            <img src="prototipos2/7.png" alt="Pantalla 07"><p class="descripcion">
+            <img loading="lazy" src="prototipos2/7.png" alt="Pantalla 07"><p class="descripcion">
     <strong>Pantalla 7: Repartir el dinero (Paso 3 de 4):</strong> Asigna cuánto pone cada quien al mes para los gastos comunes. Puede ser de manera equitativa o personalizada.
     <br>
     “Define cuánto aporta cada persona”
 </p></div>
 
           <div class="carrusel-slide">
-            <img src="prototipos2/8.png" alt="Pantalla 08"><p class="descripcion">
+            <img loading="lazy" src="prototipos2/8.png" alt="Pantalla 08"><p class="descripcion">
     <strong>Pantalla 8: Home de la Colmena (Panel general):</strong> Revisa el dinero disponible para gastos comunes y consulta cuánto falta para el siguiente pago fuerte, como la renta.
     <br>
     “Consulta el estado general de tu colmena”
 </p></div>
 
           <div class="carrusel-slide">
-            <img src="prototipos2/9.png" alt="Pantalla 09"><p class="descripcion">
+            <img loading="lazy" src="prototipos2/9.png" alt="Pantalla 09"><p class="descripcion">
     <strong>Pantalla 9: Nueva meta de recaudación:</strong> Permite crear una meta de dinero para un gasto común de la casa.
     <br>
     “Pon el monto que necesitan reunir entre todos y marca en el calendario la fecha límite”
 </p></div>
 
           <div class="carrusel-slide">
-            <img src="prototipos2/10.png" alt="Pantalla 10"><p class="descripcion">
+            <img loading="lazy" src="prototipos2/10.png" alt="Pantalla 10"><p class="descripcion">
     <strong>Pantalla 10: Presupuesto mensual:</strong> Reparte el dinero disponible de la casa en diferentes categorías de gastos.
     <br>
     “Organiza el dinero de la casa por categorías”
 </p></div>
 
           <div class="carrusel-slide">
-            <img src="prototipos2/11.png" alt="Pantalla 11"><p class="descripcion">
+            <img loading="lazy" src="prototipos2/11.png" alt="Pantalla 11"><p class="descripcion">
     <strong>Pantalla 11: Calendario de pagos:</strong> Funciona como la agenda visual de lo que entra y sale de dinero durante el mes.
     <br>
     “Consulta tus próximos ingresos y pagos”
 </p></div>
 
           <div class="carrusel-slide">
-            <img src="prototipos2/12.png" alt="Pantalla 12"><p class="descripcion">
+            <img loading="lazy" src="prototipos2/12.png" alt="Pantalla 12"><p class="descripcion">
     <strong>Pantalla 12: Menú de Emergencia:</strong> Resuelve un imprevisto urgente en la casa, como una fuga, sin tener que llegar a conflictos.
     <br>
     “Registra y resuelve una emergencia del hogar”
 </p></div>
 
           <div class="carrusel-slide">
-            <img src="prototipos2/13.png" alt="Pantalla 13"><p class="descripcion">
+            <img loading="lazy" src="prototipos2/13.png" alt="Pantalla 13"><p class="descripcion">
     <strong>Pantalla 13: Resumen mensual:</strong> Se crea una gráfica que proyecta cuánto dinero entró a la casa, cuánto se ha gastado y cuánto queda libre.
     <br>
     “Consulta el resumen financiero de este mes”
 </p></div>
 
           <div class="carrusel-slide">
-            <img src="prototipos2/14.png" alt="Pantalla 14"><p class="descripcion">
+            <img loading="lazy" src="prototipos2/14.png" alt="Pantalla 14"><p class="descripcion">
     <strong>Pantalla 14: Vista del Fondo de Emergencia:</strong> Muestra la alcancía colectiva de protección del hogar.
     <br>
     “Consulta cuánto hay disponible para emergencias”
 </p></div>
 
           <div class="carrusel-slide">
-            <img src="prototipos2/15.png" alt="Pantalla 15"><p class="descripcion">
+            <img loading="lazy" src="prototipos2/15.png" alt="Pantalla 15"><p class="descripcion">
     <strong>Pantalla 15: Registrar nueva entrada personal:</strong> Permite registrar dinero e ingresos personales. Selecciona de dónde viene tu dinero (Nómina, Freelance u Otro), teclea el monto recibido y elige cada cuánto te pagan.
     <br>
     “Registra tus ingresos personales”
 </p></div>
 
           <div class="carrusel-slide">
-            <img src="prototipos2/16.png" alt="Pantalla 16"><p class="descripcion">
+            <img loading="lazy" src="prototipos2/16.png" alt="Pantalla 16"><p class="descripcion">
     <strong>Pantalla 16: Hacer aportación al Fondo común:</strong> Permite registrar cuánto vas a aportar al fondo común, elegir si es un pago único o recurrente y definir la fecha.
     <br>
     “Registra tu aportación al fondo común"
 </p></div>
 
           <div class="carrusel-slide">
-            <img src="prototipos2/17.png" alt="Pantalla 17"><p class="descripcion">
+            <img loading="lazy" src="prototipos2/17.png" alt="Pantalla 17"><p class="descripcion">
     <strong>Pantalla 17: Detalle e historial del Fondo:</strong> Muestra el registro transparente de entradas y salidas de dinero de la reserva.
     <br>
     “Consulta el historial de movimientos del fondo”
 </p></div>
 
           <div class="carrusel-slide">
-            <img src="prototipos2/18.png" alt="Pantalla 18"><p class="descripcion">
+            <img loading="lazy" src="prototipos2/18.png" alt="Pantalla 18"><p class="descripcion">
     <strong>Pantalla 18: Dashboard personal (Mi dinero):</strong> Tu espacio privado para ver y administrar tus finanzas individuales.
     <br>
     “Consulta y administra tus finanzas personales”
@@ -407,14 +479,14 @@ Ninguna de estas funciones pretende resolver la causa económica estructural del
 
       <div class="proto-bloque">
         <h2>Reto de diseño</h2>
-        <p class="reto-parrafo" contenteditable="true">¿Cómo podríamos diseñar una herramienta que reduzca las fricciones en la vivienda compartida mientras fortalece la salud financiera de los adultos jóvenes?</p>
+        <p class="reto-parrafo">¿Cómo podríamos diseñar una herramienta que reduzca las fricciones en la vivienda compartida mientras fortalece la salud financiera de los adultos jóvenes?</p>
       </div>
 
       <div class="proto-bloque">
         <h2>Insights Valiosos</h2>
         <div class="insights-grid" id="insights">
           <div class="insight-caja" data-borde="morado">
-            <p class="insight-texto" contenteditable="true">"Los involucrados conocen las cifras exactas y las fechas de pago, pero aun así evaden las conversaciones financieras y caen en incumplimientos."</p>
+            <p class="insight-texto">"Los involucrados conocen las cifras exactas y las fechas de pago, pero aun así evaden las conversaciones financieras y caen en incumplimientos."</p>
             <div class="insight-colores">
               <button class="color-swatch" data-color="azul" aria-label="Azul"></button>
               <button class="color-swatch" data-color="rosa" aria-label="Rosa"></button>
@@ -424,7 +496,7 @@ Ninguna de estas funciones pretende resolver la causa económica estructural del
             </div>
           </div>
           <div class="insight-caja" data-borde="verde">
-            <p class="insight-texto" contenteditable="true">"Los jóvenes entienden el valor racional de llevar un presupuesto, pero abandonan las aplicaciones financieras porque la captura de datos es tediosa, moralista y no ofrece gratificación frente al hábito de consumo inmediato."</p>
+            <p class="insight-texto">"Los jóvenes entienden el valor racional de llevar un presupuesto, pero abandonan las aplicaciones financieras porque la captura de datos es tediosa, moralista y no ofrece gratificación frente al hábito de consumo inmediato."</p>
             <div class="insight-colores">
               <button class="color-swatch" data-color="azul" aria-label="Azul"></button>
               <button class="color-swatch" data-color="rosa" aria-label="Rosa"></button>
@@ -434,7 +506,7 @@ Ninguna de estas funciones pretende resolver la causa económica estructural del
             </div>
           </div>
           <div class="insight-caja" data-borde="verde">
-            <p class="insight-texto" contenteditable="true">"Guardar dinero sin un objetivo tangible provoca que la disciplina falle a la tentación del gasto diario."</p>
+            <p class="insight-texto">"Guardar dinero sin un objetivo tangible provoca que la disciplina falle a la tentación del gasto diario."</p>
             <div class="insight-colores">
               <button class="color-swatch" data-color="azul" aria-label="Azul"></button>
               <button class="color-swatch" data-color="rosa" aria-label="Rosa"></button>
@@ -444,7 +516,7 @@ Ninguna de estas funciones pretende resolver la causa económica estructural del
             </div>
           </div>
           <div class="insight-caja" data-borde="morado">
-            <p class="insight-texto" contenteditable="true">"El usuario prefiere asumir una pérdida económica personal o tolerar faltas antes que cobrar, porque teme ser visto como conflictivo, interesado o poner en riesgo la relación con su compañero."</p>
+            <p class="insight-texto">"El usuario prefiere asumir una pérdida económica personal o tolerar faltas antes que cobrar, porque teme ser visto como conflictivo, interesado o poner en riesgo la relación con su compañero."</p>
             <div class="insight-colores">
               <button class="color-swatch" data-color="azul" aria-label="Azul"></button>
               <button class="color-swatch" data-color="rosa" aria-label="Rosa"></button>
@@ -455,7 +527,7 @@ Ninguna de estas funciones pretende resolver la causa económica estructural del
           </div>
 
           <div class="insight-caja" data-borde="verde">
-            <p class="insight-texto" contenteditable="true">"Préstamos 'a costo cero' o sin intereses suele desvalorizarse, propiciando el incumplimiento de pago. El compromiso financiero requiere cierta responsabilidad o costo percibido para ser respetado."</p>
+            <p class="insight-texto">"Préstamos 'a costo cero' o sin intereses suele desvalorizarse, propiciando el incumplimiento de pago. El compromiso financiero requiere cierta responsabilidad o costo percibido para ser respetado."</p>
             <div class="insight-colores">
               <button class="color-swatch" data-color="azul" aria-label="Azul"></button>
               <button class="color-swatch" data-color="rosa" aria-label="Rosa"></button>
@@ -465,7 +537,7 @@ Ninguna de estas funciones pretende resolver la causa económica estructural del
             </div>
           </div>
           <div class="insight-caja" data-borde="verde">
-            <p class="insight-texto" contenteditable="true">"El mayor gasto monetario no viene de los gastos fijos. El mayor gasto viene de los gastos hormiga."</p>
+            <p class="insight-texto">"El mayor gasto monetario no viene de los gastos fijos. El mayor gasto viene de los gastos hormiga."</p>
             <div class="insight-colores">
               <button class="color-swatch" data-color="azul" aria-label="Azul"></button>
               <button class="color-swatch" data-color="rosa" aria-label="Rosa"></button>
@@ -475,7 +547,7 @@ Ninguna de estas funciones pretende resolver la causa económica estructural del
             </div>
           </div>
                     <div class="insight-caja" data-borde="verde">
-            <p class="insight-texto" contenteditable="true">"La gente joven desconoce la proporción real de su dinero."</p>
+            <p class="insight-texto">"La gente joven desconoce la proporción real de su dinero."</p>
             <div class="insight-colores">
               <button class="color-swatch" data-color="azul" aria-label="Azul"></button>
               <button class="color-swatch" data-color="rosa" aria-label="Rosa"></button>
@@ -485,7 +557,7 @@ Ninguna de estas funciones pretende resolver la causa económica estructural del
             </div>
           </div>
                     <div class="insight-caja" data-borde="rojo">
-            <p class="insight-texto" contenteditable="true">"Los conflictos graves en una vivienda rara vez detonan por un problema mayúsculo inmediato; comienzan con faltas pequeñas, postergaciones de pago cotidianas o desatención de tareas compartidas."</p>
+            <p class="insight-texto">"Los conflictos graves en una vivienda rara vez detonan por un problema mayúsculo inmediato; comienzan con faltas pequeñas, postergaciones de pago cotidianas o desatención de tareas compartidas."</p>
             <div class="insight-colores">
               <button class="color-swatch" data-color="azul" aria-label="Azul"></button>
               <button class="color-swatch" data-color="rosa" aria-label="Rosa"></button>
@@ -495,7 +567,7 @@ Ninguna de estas funciones pretende resolver la causa económica estructural del
             </div>
           </div>
                     <div class="insight-caja" data-borde="rojo">
-            <p class="insight-texto" contenteditable="true">"Al mudarse juntos, las personas definen reglas iniciales o asumen las costumbres que aprendieron en sus casas familiares, pero rara vez se sientan a actualizarlas."</p>
+            <p class="insight-texto">"Al mudarse juntos, las personas definen reglas iniciales o asumen las costumbres que aprendieron en sus casas familiares, pero rara vez se sientan a actualizarlas."</p>
             <div class="insight-colores">
               <button class="color-swatch" data-color="azul" aria-label="Azul"></button>
               <button class="color-swatch" data-color="rosa" aria-label="Rosa"></button>
@@ -505,7 +577,7 @@ Ninguna de estas funciones pretende resolver la causa económica estructural del
             </div>
           </div>
                     <div class="insight-caja" data-borde="verde">
-            <p class="insight-texto" contenteditable="true">"Las aplicaciones de gastos fallan con jóvenes debido a su apariencia de una hoja de cálculo." </p>
+            <p class="insight-texto">"Las aplicaciones de gastos fallan con jóvenes debido a su apariencia de una hoja de cálculo." </p>
             <div class="insight-colores">
               <button class="color-swatch" data-color="azul" aria-label="Azul"></button>
               <button class="color-swatch" data-color="rosa" aria-label="Rosa"></button>
@@ -694,11 +766,29 @@ Aunque ambas propuestas surgieron de la misma investigación, responden a dimens
           </video>
         </div>
       </div>
+
+      <aside class="etapa-puente">
+        <p class="puente-titulo">Qué nos llevó al 2do prototipo</p>
+        <p class="puente-texto">Con la app detectamos una amenaza mayor: los jóvenes adultos carecen de educación financiera práctica y de hábitos de ahorro, priorizan la gratificación inmediata y no cuentan con un fondo de emergencia. Además, las apps de gastos se abandonan porque parecen hojas de cálculo. Por eso el siguiente paso fue un juego.</p>
+        <a class="puente-enlace" href="#proto2">Ir al 2do prototipo</a>
+      </aside>
     </section>
 
 
     <section id="proto2" class="section section--wide section--space">
-      <h1>2do Prototipo</h1>
+      <h1 class="titulo-etapa"><span class="titulo-etapa-num">02</span> 2do Prototipo</h1>
+
+      <div class="etapa-cabecera">
+        <div class="etapa-texto">
+          <p class="etapa-lead">Al detectar la amenaza mayor, el equipo le dio prioridad: los adultos jóvenes necesitaban gestionar mejor su economía. Así nació un programa de entrenamiento experimental, la primera versión de VARADO.</p>
+          <dl class="etapa-datos">
+            <div><dt>Formato</dt><dd>Juego web, prototipo beta</dd></div>
+            <div><dt>Duración</dt><dd>10 días</dd></div>
+            <div><dt>Mecánica</dt><dd>Una decisión financiera por día</dd></div>
+          </dl>
+        </div>
+        <figure class="etapa-figura"><img class="ampliable" src="img/final/evolucion-02.jpg" alt="Pantallas del prototipo beta de Varado" loading="lazy"></figure>
+      </div>
 
       <div class="hero-varado">
         <p class="hero-kicker">Prototipo beta · 10 días</p>
@@ -853,11 +943,29 @@ Aunque ambas propuestas surgieron de la misma investigación, responden a dimens
           </video>
         </div>
       </div>
+
+      <aside class="etapa-puente">
+        <p class="puente-titulo">Qué nos llevó al 3er prototipo</p>
+        <p class="puente-texto">En las primeras pruebas el juego tuvo buena recepción, pero era evidente que podía mejorar. Las bitácoras de otros cadetes nos mostraron dónde.</p>
+        <a class="puente-enlace" href="#proto3">Ir al 3er prototipo</a>
+      </aside>
     </section>
 
 
     <section id="proto3" class="section section--wide section--space">
-      <h1>3er Prototipo</h1>
+      <h1 class="titulo-etapa"><span class="titulo-etapa-num">03</span> 3er Prototipo</h1>
+
+      <div class="etapa-cabecera">
+        <div class="etapa-texto">
+          <p class="etapa-lead">Las bitácoras de otros cadetes y las áreas de mejora que encontramos llevaron al segundo entrenamiento: el planeta se volvió explorable y cada día y cada noche se elige una actividad.</p>
+          <dl class="etapa-datos">
+            <div><dt>Formato</dt><dd>Juego 3D de exploración</dd></div>
+            <div><dt>Novedades</dt><dd>Mina, noches y porcentaje de ahorro</dd></div>
+            <div><dt>Plataformas</dt><dd>Computadora y celular</dd></div>
+          </dl>
+        </div>
+        <figure class="etapa-figura"><img class="ampliable" src="img/final/evolucion-03.jpg" alt="Pantallas del tercer prototipo de Varado" loading="lazy"></figure>
+      </div>
 
       <!-- ===== Descripción del prototipo ===== -->
       <div class="proto-bloque">
@@ -1085,47 +1193,355 @@ Aunque ambas propuestas surgieron de la misma investigación, responden a dimens
           <iframe src="https://www.youtube.com/embed/AtQoxxpECqw" title="Video demostración del 3er prototipo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
       </div>
+
+      <aside class="etapa-puente">
+        <p class="puente-titulo">Qué nos llevó a la entrega final</p>
+        <p class="puente-texto">Teníamos algo increíble, pero necesitábamos algo superior. Seguimos desarrollando el entrenamiento hasta lograr la sensación de un videojuego de verdad.</p>
+        <a class="puente-enlace" href="#final">Ir a la entrega final</a>
+      </aside>
+    </section>
+
+    <section id="final" class="section section--wide section--final">
+      <h1 class="titulo-etapa"><span class="titulo-etapa-num">Final</span> Entrega final</h1>
+
+      <div class="etapa-cabecera">
+        <div class="etapa-texto">
+          <p class="etapa-lead">VARADO es el proyecto clave: un programa de entrenamiento experimental con situaciones interactivas simuladas, que responde a las acciones de quien juega. Dicho de otra forma, un videojuego de simulación y toma de decisiones.</p>
+          <dl class="etapa-datos">
+            <div><dt>Formato</dt><dd>Videojuego 3D en Unity</dd></div>
+            <div><dt>Duración</dt><dd>15 días, de día y de noche</dd></div>
+            <div><dt>Plataformas</dt><dd>Navegador en computadora y celular, y APK para Android</dd></div>
+          </dl>
+        </div>
+        <figure class="etapa-figura"><img class="ampliable" src="img/final/menu-final.jpg" alt="Menú principal de Varado: Iniciar, Producción, Créditos y Opciones" loading="lazy"></figure>
+      </div>
+
+      <!-- ===== Jugar ===== -->
+      <div class="proto-bloque" id="jugar">
+        <h2>Juega VARADO</h2>
+        <div class="consola">
+          <div class="varado" data-juego="varado/">
+            <div class="varado-marco">
+              <button type="button" class="varado-portada" aria-label="Jugar Varado">
+                <span class="varado-jugar">▶&nbsp;&nbsp;Jugar</span>
+                <span class="varado-nota"></span>
+              </button>
+            </div>
+            <div class="varado-barra" hidden>
+              <button type="button" class="varado-boton" data-accion="completa">⛶ Pantalla completa</button>
+              <a class="varado-boton" data-accion="pestana" target="_blank" rel="noopener">↗ Abrir en otra pestaña</a>
+            </div>
+          </div>
+          <div class="consola-info">
+            <div class="consola-controles">
+              <h3>En computadora</h3>
+              <ul class="p3-teclas">
+                <li><span class="p3-tecla">W A S D</span> Caminar</li>
+                <li><span class="p3-tecla">Q</span><span class="p3-tecla">E</span> Girar la cámara</li>
+                <li><span class="p3-tecla">V</span> Ver el planeta completo</li>
+                <li><span class="p3-tecla">F</span> Entrar a un lugar</li>
+                <li><span class="p3-tecla">1 – 6</span> Elegir opciones</li>
+                <li><span class="p3-tecla">Esc</span> Pausa y opciones</li>
+              </ul>
+            </div>
+            <div class="consola-controles">
+              <h3>En celular</h3>
+              <p>Joystick para caminar, flechas para girar la cámara, + y − para acercar y el globo para ver el planeta. Para entrar a un lugar, toca el aviso. Se juega en horizontal y a pantalla completa.</p>
+            </div>
+            <p class="consola-nota">La primera vez descarga unos 62 MB; después abre desde la memoria del navegador. Funciona en Chrome, Edge, Firefox y Safari actualizados.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Concepto ===== -->
+      <div class="proto-bloque">
+        <h2>Concepto de juego</h2>
+        <div class="dos-columnas">
+          <figure class="marco-imagen"><img class="ampliable" src="img/final/concepto.jpg" alt="Diálogo de IO, la inteligencia artificial de la nave" loading="lazy"></figure>
+          <div class="panel">
+            <p>Varado es una simulación espacial que funciona como analogía de la vida financiera de los jóvenes: enseña ahorro y administración sin la pesadez de un curso.</p>
+            <p>Eres un ingeniero novato atrapado en un planeta desértico, frente a una estrella a punto de estallar en supernova. Tu meta es sobrevivir, administrar tus recursos y construir un escape antes de que se acabe el tiempo.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Investigación ===== -->
+      <div class="proto-bloque">
+        <h2>Investigación de expertos</h2>
+        <div class="columnas-4">
+          <article class="panel panel--lista">
+            <h3>Gastos hormiga y claridad del dinero</h3>
+            <ul>
+              <li>El mayor gasto no viene de los gastos fijos, sino de los gastos hormiga.</li>
+              <li>La gente joven desconoce la proporción real de su dinero.</li>
+              <li>Hay que reducir los gastos de forma estratégica y consciente.</li>
+            </ul>
+          </article>
+          <article class="panel panel--lista">
+            <h3>Ahorro con meta y colchón</h3>
+            <ul>
+              <li>Ahorrar solo funciona cuando existe una meta clara.</li>
+              <li>Guardar dinero sin un objetivo tangible hace que la disciplina falle ante la tentación del gasto diario.</li>
+              <li>Se podría destinar entre el 10 y el 15 % del ingreso a un fondo de reserva para no quedarse sin lo básico.</li>
+              <li>Ganar poco o mucho no impide ahorrar: el problema no es cuánto gana cada persona.</li>
+            </ul>
+          </article>
+          <article class="panel panel--lista">
+            <h3>Por qué un juego y no una app</h3>
+            <ul>
+              <li>Los jóvenes entienden el valor de un presupuesto, pero abandonan las apps porque son tediosas, moralistas y no dan gratificación.</li>
+              <li>Las apps de gastos fallan por parecer hojas de cálculo.</li>
+              <li>Hay oportunidad en soluciones dinámicas, interactivas y gamificadas.</li>
+              <li>Saber qué hacer no basta para hacerlo.</li>
+            </ul>
+          </article>
+          <article class="panel panel--lista">
+            <h3>Deuda</h3>
+            <ul>
+              <li>Los préstamos «a costo cero» se desvalorizan y propician el incumplimiento.</li>
+              <li>El compromiso financiero requiere un costo percibido para ser respetado.</li>
+            </ul>
+          </article>
+        </div>
+
+        <h3 class="sub-bloque">Investigación de campo</h3>
+        <div class="columnas-3">
+          <article class="panel metodo">
+            <svg class="metodo-icono" viewBox="0 0 48 48" aria-hidden="true"><path d="M17 39 7 28a7 7 0 0 1 10-10l0 0a7 7 0 0 1 10 10L17 39Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M33 41l-7-8a5 5 0 0 1 7-7 5 5 0 0 1 7 7l-7 8Z M33 26l-2 5 3 2-2 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <h4>Cartas de amor y ruptura</h4>
+            <p>Escribir una carta al producto como si fuera una relación: qué amas, qué te frustra, qué te hizo irte. Revela emociones y vínculos.</p>
+          </article>
+          <article class="panel metodo">
+            <svg class="metodo-icono" viewBox="0 0 48 48" aria-hidden="true"><circle cx="27" cy="20" r="13" fill="none" stroke="currentColor" stroke-width="2"/><path d="M17 30 6 41" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M21 25v-5M27 25v-9M33 25v-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            <h4>Análisis Kano</h4>
+            <p>Clasifica las funciones según su impacto en la satisfacción. Ayuda a decidir qué priorizar y qué puede esperar.</p>
+          </article>
+          <article class="panel metodo">
+            <svg class="metodo-icono" viewBox="0 0 48 48" aria-hidden="true"><path d="M12 32a7 7 0 0 1 1-14 10 10 0 0 1 19-2 8 8 0 0 1 3 16H12Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 40a4 4 0 0 1 1-8h14a4 4 0 0 1 0 8H9Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            <h4>Nubes de palabras</h4>
+            <p>Convierte las palabras que usan los usuarios en una imagen: cuanto más se repite una palabra, más grande aparece.</p>
+          </article>
+        </div>
+      </div>
+
+      <!-- ===== Usuario ===== -->
+      <div class="proto-bloque">
+        <h2>Expediente: tripulación</h2>
+        <div class="expediente">
+          <div class="panel panel--alerta expediente-dato">
+            <p class="expediente-quien">Cadetes: jóvenes adultos de 18 a 29 años</p>
+            <div class="dona" style="--valor: 46.8" role="img" aria-label="46.8 % de los jóvenes ocupados gana hasta un salario mínimo">
+              <span>46.8 %</span>
+            </div>
+            <p class="expediente-texto">de los jóvenes ocupados gana hasta un salario mínimo: $315.04 al día. Es la etapa que Arnett llama adultez emergente.</p>
+          </div>
+          <ul class="expediente-lista">
+            <li><strong>Ahorro como sacrificio inmediato.</strong> Se percibe como una pérdida hoy y no como un beneficio futuro.</li>
+            <li><strong>Efecto túnel por presión económica.</strong> Lo urgente del día a día bloquea la capacidad de planear a futuro.</li>
+            <li><strong>Mentalidad residual y fugas de dinero.</strong> Se intenta ahorrar solo lo que sobra, pero los gastos hormiga se comen el margen.</li>
+            <li><strong>Ingresos variables o muy frecuentes.</strong> Cobrar a diario, cada semana o en efectivo dificulta proyectar y mantener aportaciones fijas.</li>
+            <li><strong>Ahorro informal e ineficiente.</strong> Desconfiar de los bancos lleva a usar «guardaditos» en efectivo que pierden valor con la inflación y se gastan rápido.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ===== Reto ===== -->
+      <div class="proto-bloque">
+        <h2>Incógnita espacial</h2>
+        <blockquote class="reto-hero">
+          <p>¿Cómo podemos hacer que los adultos jóvenes gestionen mejor su economía ante imprevistos para que mejoren sus finanzas y puedan afrontar adversidades en el futuro?</p>
+        </blockquote>
+        <ol class="incognita">
+          <li><span>01</span><h3>Adultos jóvenes</h3><p>A quiénes estudiamos.</p></li>
+          <li><span>02</span><h3>Gestionar mejor</h3><p>El área de mejora.</p></li>
+          <li><span>03</span><h3>Imprevistos</h3><p>Decisiones bajo presión.</p></li>
+          <li><span>04</span><h3>Adversidad</h3><p>Mantener un fondo de emergencia.</p></li>
+        </ol>
+      </div>
+
+      <!-- ===== Tanques ===== -->
+      <div class="proto-bloque">
+        <h2>Los tres tanques</h2>
+        <div class="archivos" data-pestanas>
+          <div class="archivos-pestanas" role="tablist" aria-label="Tanques del proyecto">
+            <button type="button" role="tab" id="tab-alfa" aria-controls="panel-alfa" aria-selected="true">Archivo Alfa <small>Teoría</small></button>
+            <button type="button" role="tab" id="tab-beta" aria-controls="panel-beta" aria-selected="false" tabindex="-1">Archivo Beta <small>Diseño</small></button>
+            <button type="button" role="tab" id="tab-gamma" aria-controls="panel-gamma" aria-selected="false" tabindex="-1">Archivo Gamma <small>Usuario</small></button>
+          </div>
+          <div class="archivos-panel" role="tabpanel" id="panel-alfa" aria-labelledby="tab-alfa">
+            <article><h3>Círculo mágico</h3><p>El juego crea un espacio delimitado donde se suspenden las reglas del mundo real: se puede experimentar y equivocarse sin consecuencias reales.</p></article>
+            <article><h3>Aprendizaje experiencial</h3><p>Los adultos no aprenden reteniendo teoría, sino con un ciclo activo de experiencia concreta, observación reflexiva, conceptualización y experimentación.</p></article>
+            <article><h3>Teoría del empujón</h3><p>Las decisiones financieras no son 100 % racionales: pequeños «empujoncitos» en el entorno guían mejores elecciones sin prohibir ni imponer.</p></article>
+          </div>
+          <div class="archivos-panel" role="tabpanel" id="panel-beta" aria-labelledby="tab-beta" hidden>
+            <article><h3>Entorno seguro de error</h3><p>Permite vivir crisis financieras y escasez en un espacio controlado, sin poner en riesgo el patrimonio real.</p></article>
+            <article><h3>Simulación y agencia</h3><p>Convierte conceptos financieros abstractos en decisiones activas donde cada elección tiene causa y efecto inmediatos.</p></article>
+            <article><h3>Metáfora espacial</h3><p>Quita los prejuicios y el rechazo hacia los términos bancarios tradicionales y enfoca la mente en administrar recursos.</p></article>
+          </div>
+          <div class="archivos-panel" role="tabpanel" id="panel-gamma" aria-labelledby="tab-gamma" hidden>
+            <article><h3>Reduce el dolor de apartar</h3><p>Plantea el ahorro no como una privación, sino como un escudo de autonomía y supervivencia.</p></article>
+            <article><h3>Entrena el hábito antes de la crisis</h3><p>Lleva la teoría a la práctica cotidiana para cerrar la brecha entre saber ahorrar y hacerlo.</p></article>
+            <article><h3>Visibiliza las fugas silenciosas</h3><p>Hace tangible el impacto de los gastos impulsivos y la urgencia de construir un colchón de emergencia.</p></article>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Cómo funciona ===== -->
+      <div class="proto-bloque">
+        <h2>Sistema de juego</h2>
+        <div class="dos-columnas dos-columnas--ancha">
+          <figure class="marco-imagen"><img class="ampliable" src="img/final/sistema-dia-noche.jpg" alt="El planeta de día y de noche" loading="lazy"></figure>
+          <dl class="panel definiciones">
+            <dt>Fase diurna: producción</dt><dd>Enfocada en la minería para recolectar minerales, la moneda principal del juego.</dd>
+            <dt>Fase nocturna: recuperación y riesgo</dt><dd>Para descansar o explorar el planeta bajo nuevas condiciones.</dd>
+            <dt>Gestión libre del tiempo</dt><dd>Tú decides cómo usar tus horas: comerciar de día, minar de noche o atender imprevistos.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="proto-bloque">
+        <h2>Sistema de progresión</h2>
+        <ol class="dias-tira" aria-label="Los 15 días del juego">
+          <li>01</li><li>02</li><li>03</li><li>04</li><li>05</li><li>06</li><li>07</li><li>08</li><li>09</li><li>10</li><li>11</li><li>12</li><li>13</li><li>14</li><li>15</li>
+        </ol>
+        <p class="dias-nota">Cada día dura unos 4 minutos en tiempo real.</p>
+        <div class="dos-columnas">
+          <figure class="marco-imagen"><img class="ampliable" src="img/final/progresion-noche.jpg" alt="Pantalla de cambio de turno: Noche 2" loading="lazy"></figure>
+          <dl class="panel definiciones">
+            <dt>Objetivo</dt><dd>Conseguir 200 fragmentos.</dd>
+            <dt>Trabajar en la mina</dt><dd>Genera 10 fragmentos por turno, 20 con el pico mejorado.</dd>
+            <dt>Explorar</dt><dd>Disponible cuando IO detecta un aterrizaje: llegan viajeros (mercader, banquero, chef, estafador…) y decides si gastar tus fragmentos.</dd>
+            <dt>Turnos condicionados</dt><dd>La historia o el clima limitan algunas opciones: tutorial de minería (día 1), entrega del comando (día 2, mañana), radiación (día 12, mañana) y tormenta solar (día 14, noche).</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="proto-bloque">
+        <h2>Diseño de niveles</h2>
+        <div class="columnas-2">
+          <p class="panel">En Varado, cada rotación del planeta es un nivel único contra reloj donde cada elección define tu supervivencia.</p>
+          <p class="panel"><strong>La mina, punto vital.</strong> El eje de este planeta árido para extraer los recursos indispensables y salir adelante.</p>
+          <p class="panel"><strong>Cuenta regresiva viva.</strong> Una estrella al borde de la supernova crece en el horizonte y su rugido se intensifica ciclo tras ciclo, subiendo la presión sin saturar la pantalla.</p>
+          <p class="panel"><strong>Mercaderes espaciales.</strong> Naves itinerantes que alteran la economía del nivel con dilemas entre tratos justos y ofertas trampa.</p>
+        </div>
+        <figure class="marco-imagen marco-imagen--tira"><img class="ampliable" src="img/final/niveles.jpg" alt="Modelos del planeta, la mina y la cueva" loading="lazy"></figure>
+      </div>
+
+      <!-- ===== Producción ===== -->
+      <div class="proto-bloque">
+        <h2>Producción</h2>
+        <div class="produccion">
+          <figure class="pieza pieza--ancha">
+            <img class="ampliable" src="img/final/narrativa.jpg" alt="Storyboards de Varado" loading="lazy">
+            <figcaption><strong>Narrativa.</strong> Storyboards de las escenas clave: recorrer el planeta, minar, la llegada de naves, la tienda del mercader, la noche en la nave y la tormenta.</figcaption>
+          </figure>
+          <figure class="pieza">
+            <img class="ampliable" src="img/final/personajes-3d.jpg" alt="Personajes 3D de Varado" loading="lazy">
+            <figcaption><strong>Personajes.</strong> Astronauta, chef, minero, ladrón, mercader sospechoso y mercader, ya modelados en 3D.</figcaption>
+          </figure>
+          <figure class="pieza">
+            <img class="ampliable" src="img/final/personajes-bocetos.jpg" alt="Bocetos de los personajes" loading="lazy">
+            <figcaption><strong>Bocetos.</strong> De dónde salieron los personajes.</figcaption>
+          </figure>
+          <figure class="pieza pieza--ancha">
+            <img class="ampliable" src="img/final/modelado.jpg" alt="Escenarios y personajes en Blender" loading="lazy">
+            <figcaption><strong>Modelado.</strong> Escenarios, interiores y personajes con esqueleto para animar.</figcaption>
+          </figure>
+          <figure class="pieza pieza--ancha pieza--clara">
+            <img class="ampliable" src="img/final/tipografias.svg" alt="Tipografías de Varado: Michroma y VT323" loading="lazy">
+            <figcaption><strong>Tipografías.</strong> Michroma para la interfaz y VT323 para los letreros del mundo, las dos con licencia libre SIL OFL.</figcaption>
+          </figure>
+          <figure class="pieza pieza--ancha pieza--clara">
+            <img class="ampliable" src="img/final/paleta.svg" alt="Paleta de color de Varado" loading="lazy">
+            <figcaption><strong>Paleta de color.</strong> Interfaz, planeta, nave, personajes, cielo y brillos.</figcaption>
+          </figure>
+          <figure class="pieza pieza--ancha">
+            <img class="ampliable" src="img/final/ui-hud.jpg" alt="Interfaz de exploración: HUD, íconos y controles táctiles" loading="lazy">
+            <figcaption><strong>Interfaz.</strong> HUD con días y recursos, íconos de cada lugar y controles táctiles.</figcaption>
+          </figure>
+          <figure class="pieza pieza--ancha">
+            <img class="ampliable" src="img/final/ui-menus.jpg" alt="Tres variantes del menú principal" loading="lazy">
+            <figcaption><strong>Menú principal.</strong> Variantes exploradas antes de la versión final.</figcaption>
+          </figure>
+          <figure class="pieza">
+            <img class="ampliable" src="img/final/voz-sonido.jpg" alt="Grabación de voces y edición multipista" loading="lazy">
+            <figcaption><strong>Voz y efectos de sonido.</strong> Grabación de las voces de IO y los personajes, y edición de los efectos.</figcaption>
+          </figure>
+          <figure class="pieza">
+            <img class="ampliable" src="img/final/programacion.jpg" alt="El juego junto a su código en C#" loading="lazy">
+            <figcaption><strong>Programación.</strong> Unity y C#: exploración, diálogos, economía y cinemáticas.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="proto-bloque">
+        <h2>Mockups</h2>
+        <div class="galeria galeria--mockups">
+          <div class="galeria-item"><img class="ampliable" src="img/final/mockup-1.jpg" alt="Pantalla de Varado en un vestíbulo" loading="lazy"></div>
+          <div class="galeria-item"><img class="ampliable" src="img/final/mockup-2.jpg" alt="Tarjeta con el logotipo de Varado" loading="lazy"></div>
+          <div class="galeria-item"><img class="ampliable" src="img/final/mockup-3.jpg" alt="Tapete de Varado en una ventanilla" loading="lazy"></div>
+          <div class="galeria-item"><img class="ampliable" src="img/final/mockup-4.jpg" alt="Ilustración del astronauta y una escotilla" loading="lazy"></div>
+        </div>
+      </div>
+
+      <div class="cierre">
+        <img src="img/final/cierre-logo.webp" alt="Logotipo de Varado" loading="lazy">
+        <div class="cierre-texto">
+          <p>Cadetes, ahora es su momento…</p>
+          <p class="cierre-fuera">¡Cambio y fuera!</p>
+          <a class="boton boton--rosa" href="#jugar">▶ Jugar Varado</a>
+        </div>
+      </div>
     </section>
 
     <section id="nosotros" class="section section--wide">
       <h1>Nosotros</h1>
+      <p class="seccion-intro">El comando estelar detrás de la misión.</p>
 
-              <div class="team-member">
-                <div class="team-photo">
-                  <div class="photo-placeholder"></div>
-                </div>
-                <div class="team-info">
-                  <h2>Víctor Hugo</h2>
-                  <p>Información.</p>
-                </div>
-              </div>
+      <div class="equipo">
+        <div class="team-member tripulante tripulante--cian">
+          <div class="team-photo">
+            <img src="img/final/equipo-victor.jpg" alt="Víctor Hugo con traje de astronauta" loading="lazy">
+          </div>
+          <div class="team-info">
+            <p class="tripulante-rol">Comandante</p>
+            <h2>Víctor Hugo</h2>
+          </div>
+        </div>
 
-              <div class="team-member team-member--reverse">
-                <div class="team-photo">
-                  <div class="photo-placeholder"></div>
-                </div>
-                <div class="team-info">
-                  <h2>Rodrigo Ramos</h2>
-                  <p>Información.</p>
-                </div>
-              </div>
+        <div class="team-member tripulante tripulante--magenta">
+          <div class="team-photo">
+            <img src="img/final/equipo-rodrigo.jpg" alt="Rodrigo con traje de astronauta" loading="lazy">
+          </div>
+          <div class="team-info">
+            <p class="tripulante-rol">Inteligencia</p>
+            <h2>Rodrigo Ramos</h2>
+          </div>
+        </div>
 
-              <div class="team-member">
-                <div class="team-photo">
-                  <div class="photo-placeholder"></div>
-                </div>
-                <div class="team-info">
-                  <h2>Fernando Del Río</h2>
-                  <p>Información.</p>
-                </div>
-              </div>
-            </section>
+        <div class="team-member tripulante tripulante--ambar">
+          <div class="team-photo">
+            <img src="img/final/equipo-fernando.jpg" alt="Fernando con traje de astronauta" loading="lazy">
+          </div>
+          <div class="team-info">
+            <p class="tripulante-rol">Ingeniero</p>
+            <h2>Fernando Del Río</h2>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </main>
 
   <footer class="site-footer">
+    <p class="footer-fin">Comunicación terminada</p>
     <p>&copy; <span id="year"></span> Blog. Todos los derechos reservados.</p>
   </footer>
+
+  <dialog class="visor" id="visor" aria-label="Imagen ampliada">
+    <button type="button" class="visor-cerrar" aria-label="Cerrar">✕</button>
+    <img alt="">
+  </dialog>
 
   <script src="script.js"></script>
 </body>

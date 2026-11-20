@@ -1,0 +1,21 @@
+VARADO · EJECUTABLE FINAL (VERSIÓN WEB)
+=======================================
+
+1_Juego_Web\varado ........... El juego para navegador (WebGL). Esta carpeta completa es la que se sube al blog.
+                               Funciona en computadora (teclado y mouse) y en celular o tableta (controles táctiles).
+1_Juego_Web\pagina-ejemplo-varado.html
+                               Página de prueba con el juego insertado (necesita servidor, ver 2_Codigo_Blog\LEEME.txt).
+2_Codigo_Blog ................ El código para insertar el juego en el blog de GitHub e instrucciones paso a paso.
+3_Prompt_Claude .............. Un prompt listo para pedirle a Claude que haga la integración en el repositorio del blog.
+
+CAMBIOS EN EL JUEGO PARA LA WEB
+- Sin «Salir del juego» en Opciones ni en la pausa (en un navegador no se puede cerrar la pestaña desde el juego).
+- Computadora: sin joystick, flechas de cámara, zoom ni globo en pantalla. Se juega con WASD, Q/E, V, F y los números.
+- Celular/tableta: con los controles táctiles y sin las indicaciones de teclas (la «F» del aviso y de «Interactuar»,
+  la línea de ayuda y el texto de controles al empezar, que ahora explica los controles táctiles).
+- Pantalla de carga con el fondo del menú, aviso para girar el celular y «Jugar» al terminar de cargar
+  (le da el teclado y el sonido al juego; en celular además pone pantalla completa).
+
+VOLVER A COMPILAR (después de cambiar el juego en Unity)
+- Menú Varado › Compilar versión web final (PC y celular). Reemplaza 1_Juego_Web\varado y deja Unity otra vez en Android.
+- Luego copia la carpeta varado nueva al blog (encima de la anterior) y haz commit/push.

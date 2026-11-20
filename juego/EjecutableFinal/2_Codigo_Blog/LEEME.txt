@@ -1,0 +1,54 @@
+VARADO · CÓDIGO PARA EL BLOG (GitHub Pages)
+==========================================
+
+QUÉ HAY AQUÍ
+- insertar-varado.html ......... El bloque que pegas en tu blog donde quieras el juego (página o entrada).
+- pagina-ejemplo-varado.html ... Una página completa de ejemplo con el bloque ya puesto.
+- jekyll-pagina-varado.md ...... La misma página lista para un blog hecho con Jekyll (el tipo más común en GitHub Pages).
+- portada.jpg .................. La portada del juego (también viene dentro de varado/TemplateData/). Sirve como imagen de la entrada.
+
+
+PASO 1 · SUBIR EL JUEGO
+1. Copia la carpeta «1_Juego_Web\varado» completa a tu repositorio del blog:
+     - Jekyll o HTML normal ....... en la raíz del repositorio  →  tu-repo/varado/
+     - Hugo ....................... static/varado/
+     - Astro, Vite, Next.js ....... public/varado/
+2. No cambies nada dentro de «varado». No uses Git LFS (GitHub Pages no sirve esos archivos).
+3. Haz commit y push. Cuando GitHub Pages termine, el juego solo ya abre en:
+     https://USUARIO.github.io/varado/            (sitio de usuario)
+     https://USUARIO.github.io/REPO/varado/       (sitio de proyecto)
+
+
+PASO 2 · PONERLO EN UNA PÁGINA DEL BLOG
+1. Abre insertar-varado.html con el Bloc de notas o VS Code y copia todo desde <div class="varado" ... hasta el último </script>.
+2. Pégalo en tu página o entrada (en Markdown también funciona: se pega tal cual, como HTML).
+3. Cambia data-juego="/varado/" por la ruta de tu carpeta:
+     - Sitio de usuario (USUARIO.github.io) ........ /varado/
+     - Sitio de proyecto (USUARIO.github.io/REPO) .. /REPO/varado/
+     - Jekyll ...................................... {{ '/varado/' | relative_url }}   (ya viene así en jekyll-pagina-varado.md)
+4. Si tu blog es Jekyll, puedes copiar jekyll-pagina-varado.md a la raíz del repo: crea la página /varado-jugar/.
+   Si tu tema no tiene el layout «page», cámbialo por «default» o el que usen tus otras páginas.
+
+
+CÓMO SE COMPORTA
+- Muestra la portada con «Jugar». El juego no se descarga hasta que alguien le da clic (no gasta datos de quien solo lee).
+- Computadora: el juego se abre dentro de la página, en 16:9, con «Pantalla completa» y «Abrir en otra pestaña».
+  Se juega con teclado y mouse; no salen los botones táctiles.
+- Celular o tableta: abre el juego en toda la pantalla. Si el celular está en vertical, pide girarlo.
+  Se juega con el joystick y los botones en pantalla; no salen las indicaciones de teclas.
+- En ninguna de las dos versiones aparece «Salir del juego» (en la web no se puede cerrar la pestaña desde el juego).
+
+
+PROBAR
+- Abrir index.html con doble clic NO funciona: el navegador bloquea los archivos locales. Necesita un servidor
+  (GitHub Pages, o en tu computadora la extensión «Live Server» de VS Code sobre la carpeta 1_Juego_Web).
+- Para ver la versión de celular desde la computadora:  .../varado/index.html?modo=movil
+  y la de computadora desde el celular:                  .../varado/index.html?modo=pc
+- La primera carga tarda según la conexión; las siguientes salen de la caché del navegador y son mucho más rápidas.
+
+
+SI ALGO FALLA
+- Pantalla «No se pudo cargar el juego» o error 404 en la consola (F12): la ruta de data-juego no apunta a la carpeta.
+  Abre directamente https://.../varado/index.html para confirmar que el juego está publicado.
+- Hugo no muestra el bloque: activa en la configuración  markup.goldmark.renderer.unsafe = true  (o usa un shortcode).
+- Si quieres que Claude lo integre por ti: usa el prompt de la carpeta 3_Prompt_Claude.

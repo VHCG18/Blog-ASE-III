@@ -1,0 +1,26 @@
+BLOG: WHATSAPP IMAGE · REDISEÑO CON LA ENTREGA FINAL
+=====================================================
+
+CÓMO SUBIRLO AL REPOSITORIO DEL BLOG
+1. Copia TODO el contenido de esta carpeta a la raíz del repositorio (donde está tu index.html actual):
+     index.html, style.css, script.js  -> reemplazan a los anteriores
+     fonts/                             -> nueva (Michroma y Rajdhani, para no depender de Google Fonts)
+     img/final/                         -> nueva (imágenes de la presentación final)
+     varado/                            -> nueva (el juego para navegador, 62 MB)
+2. NO borres tus carpetas actuales: prototipos/, prototipos2/, fotos/, img/proto2/ y videos/.
+   El nuevo index.html las sigue usando con las mismas rutas.
+3. Haz commit y push. No uses Git LFS (GitHub Pages no sirve esos archivos). Ningún archivo pasa de 50 MB.
+
+QUÉ CAMBIÓ
+- Todo el contenido que ya tenías sigue igual (textos, carruseles, tanques, insights, mapas, videos y Figma).
+  Solo se reemplazaron los dos textos de relleno: el de Inicio y el «Información.» de Nosotros.
+- Inicio nuevo y sección «Evolución» con la línea del tiempo de las 4 entregas.
+- Cada prototipo tiene una cabecera (qué fue y por qué) y un cierre (qué nos llevó a la siguiente etapa).
+  Cada etapa tiene su color: 01 cian, 02 rosa, 03 rojo, Final ámbar.
+- Sección «Final» con la presentación completa y el juego para jugar en el navegador (computadora y celular).
+- «Nosotros» con las fotos y los roles del comando estelar.
+- Se quitaron los contenteditable="true" que dejaban editar el texto desde la página publicada.
+
+PROBARLO EN TU COMPUTADORA
+Abrir index.html con doble clic muestra el blog, pero el juego necesita un servidor.
+Con VS Code usa la extensión «Live Server»; en GitHub Pages funciona directo.
